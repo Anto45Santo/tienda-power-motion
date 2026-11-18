@@ -1,13 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelo;
 
-/**
- *
- * @author Jovan
- */
-public class EstadoPedido {
-    
+public enum EstadoPedido {
+    POR_APROBAR("Por aprobar", "estado-pendiente"),
+    APROBADO("Aprobado", "estado-aprobado"),
+    ENVIADO("Enviado", "estado-enviado"),
+    ENTREGADO("Entregado", "estado-aprobado"),
+    RECHAZADO("Rechazado", "estado-rechazado");
+
+    private final String texto, estilo;
+    EstadoPedido(String texto, String estilo) { this.texto = texto; this.estilo = estilo; }
+    public String getTexto() { return texto; }
+    public String getEstilo() { return estilo; }
 }
