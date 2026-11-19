@@ -1,0 +1,20 @@
+/* cuenta.css — Carrito, Finalizar compra, Me gusta, Mis compras y Mi perfil */
+.pantalla { -fx-padding: 10 20 16 20; -fx-spacing: 8; }
+.caja-pad { -fx-padding: 16 20 16 20; }
+.item-carrito { -fx-background-color: white; -fx-border-color: -linea; -fx-spacing: 16; -fx-alignment: center-left; -fx-padding: 0 20 0 0; }
+.total { -fx-font-size: 22px; -fx-font-weight: 800; }
+.total-azul { -fx-font-size: 22px; -fx-font-weight: 800; -fx-text-fill: -azul; }
+.pago-cabecera { -fx-background-color: -noche; -fx-padding: 18 20 18 20; -fx-spacing: 4; }
+.pago-cabecera .label { -fx-text-fill: white; }
+.pago-cabecera .numero { -fx-font-size: 26px; -fx-font-weight: 800; }
+.pago-cabecera .pequeno { -fx-text-fill: rgba(255,255,255,0.7); -fx-font-size: 12px; }
+.pago-cabecera .titulo-pago { -fx-text-fill: #5AA2FF; -fx-font-size: 11px; -fx-font-weight: 800; }
+.zona-archivo { -fx-background-color: #F7FAFF; -fx-border-color: -azul; -fx-border-style: segments(6, 5); -fx-padding: 14 16 14 16; -fx-spacing: 14; -fx-alignment: center-left; }
+.fila-compra { -fx-background-color: white; -fx-border-color: -linea; -fx-padding: 12 16 12 14; -fx-spacing: 14; -fx-alignment: center-left; }
+.perfil-cabecera { -fx-background-color: -noche; -fx-padding: 18 20 18 20; -fx-spacing: 14; -fx-alignment: center-left; }
+.perfil-cabecera .label { -fx-text-fill: white; }
+.perfil-cabecera .nombre { -fx-font-size: 16px; -fx-font-weight: 800; }
+.perfil-cabecera .correo { -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 12px; }
+.dato { -fx-background-color: #F4F7FB; -fx-padding: 12; -fx-alignment: center; -fx-spacing: 2; }
+.dato .valor { -fx-font-size: 20px; -fx-font-weight: 800; }
+.vacio { -fx-spacing: 12; -fx-alignment: center; }

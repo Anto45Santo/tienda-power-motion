@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.*?>
+
+<!-- 04 · Catálogo: lo primero que ve el cliente después del login -->
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="vista.frmCatalogo">
+    <stylesheets>
+        <URL value="@estilos.css"/>
+        <URL value="@catalogo.css"/>
+    </stylesheets>
+
+    <VBox spacing="12">
+        <padding><Insets top="14" right="20" bottom="10" left="20"/></padding>
+        <HBox spacing="6" alignment="CENTER_LEFT">
+            <Button fx:id="btnFiltroActivo" styleClass="btn-suave, filtro-activo" onAction="#quitarFiltroActivo" managed="false" visible="false"/>
+            <!-- Filtros rápidos: frmCatalogo usa el texto de cada uno -->
+            <HBox fx:id="boxChips" spacing="6">
+                <ToggleButton text="Todo" styleClass="chip" selected="true"/>
+                <ToggleButton text="Calzado" styleClass="chip"/>
+                <ToggleButton text="Ropa" styleClass="chip"/>
+                <ToggleButton text="Accesorios" styleClass="chip"/>
+                <ToggleButton text="Hombre" styleClass="chip"/>
+                <ToggleButton text="Mujer" styleClass="chip"/>
+                <ToggleButton text="Ofertas" styleClass="chip"/>
+            </HBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="lblTotal" styleClass="gris"/>
+            <Button fx:id="btnFiltros" text="Filtros" onAction="#abrirFiltros" styleClass="btn-borde-fino">
+                <graphic><Group><SVGPath styleClass="ico,ico-oscuro" scaleX="0.667" scaleY="0.667" content="M4 7h10M18 7h2M4 17h4M12 17h8 M14 7a2 2 0 1 0 4 0a2 2 0 1 0 -4 0 M8 17a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/></Group></graphic>
+            </Button>
+            <ComboBox fx:id="cmbOrden" value="Destacados" prefWidth="190">
+                <items><FXCollections fx:factory="observableArrayList"><String fx:value="Destacados"/><String fx:value="Más recientes"/><String fx:value="Menor precio"/><String fx:value="Mayor precio"/><String fx:value="Mayor descuento"/></FXCollections></items>
+            </ComboBox>
+        </HBox>
+        <Pagination fx:id="paginas" VBox.vgrow="ALWAYS"/>
+    </VBox>
+
+    <!-- Panel de filtros (se abre sobre el catálogo) -->
+    <StackPane fx:id="capaFiltros" visible="false">
+        <Region styleClass="velo" onMouseClicked="#cerrarFiltros"/>
+        <VBox fx:id="panelFiltros" styleClass="panel-filtros" StackPane.alignment="CENTER_RIGHT" maxWidth="380" prefWidth="380">
+            <HBox alignment="CENTER_LEFT">
+                <Label text="Filtros" styleClass="subtitulo" style="-fx-font-size: 18px;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="btnCerrarFiltros" onAction="#cerrarFiltros" styleClass="btn-icono" style="-fx-border-width: 0;">
+                    <graphic><Group><SVGPath styleClass="ico,ico-oscuro" scaleX="0.75" scaleY="0.75" content="M6 6l12 12M18 6 6 18"/></Group></graphic>
+                </Button>
+            </HBox>
+            <!-- Grupos de filtros: dentro de cada grupo basta con que el producto cumpla una opción marcada -->
+            <VBox fx:id="gruposFiltros" spacing="4" VBox.vgrow="ALWAYS">
+            <Label text="Marca" styleClass="grupo"/>
+            <FlowPane fx:id="grupoMarcas" hgap="6" vgap="6">
+                <ToggleButton text="Adidas" styleClass="chip"/>
+                <ToggleButton text="Nike" styleClass="chip"/>
+                <ToggleButton text="Puma" styleClass="chip"/>
+                <ToggleButton text="Reebok" styleClass="chip"/>
+                <ToggleButton text="Asics" styleClass="chip"/>
+                <ToggleButton text="Fila" styleClass="chip"/>
+                <ToggleButton text="Skechers" styleClass="chip"/>
+                <ToggleButton text="Power Motion" styleClass="chip"/>
+            </FlowPane>
+            <Label text="Tipo" styleClass="grupo"/>
+            <FlowPane fx:id="grupoTipos" hgap="6" vgap="6">
+                <ToggleButton text="Calzado" styleClass="chip"/>
+                <ToggleButton text="Ropa" styleClass="chip"/>
+                <ToggleButton text="Accesorios" styleClass="chip"/>
+            </FlowPane>
+            <Label text="Talla textil" styleClass="grupo"/>
+            <FlowPane fx:id="grupoTallas" hgap="6" vgap="6">
+                <ToggleButton text="XS" styleClass="chip"/>
+                <ToggleButton text="S" styleClass="chip"/>
+                <ToggleButton text="M" styleClass="chip"/>
+                <ToggleButton text="L" styleClass="chip"/>
+                <ToggleButton text="XL" styleClass="chip"/>
+                <ToggleButton text="XXL" styleClass="chip"/>
+            </FlowPane>
+            <Label text="Talla de calzado (US)" styleClass="grupo"/>
+            <FlowPane fx:id="grupoTallasCalzado" hgap="6" vgap="6">
+                <ToggleButton text="7" styleClass="chip"/>
+                <ToggleButton text="7.5" styleClass="chip"/>
+                <ToggleButton text="8" styleClass="chip"/>
+                <ToggleButton text="8.5" styleClass="chip"/>
+                <ToggleButton text="9" styleClass="chip"/>
+                <ToggleButton text="9.5" styleClass="chip"/>
+                <ToggleButton text="10" styleClass="chip"/>
+                <ToggleButton text="10.5" styleClass="chip"/>
+                <ToggleButton text="11" styleClass="chip"/>
+            </FlowPane>
+            <Label text="Color" styleClass="grupo"/>
+            <FlowPane fx:id="grupoColores" hgap="6" vgap="6">
+                <ToggleButton text="Azul" styleClass="chip"/>
+                <ToggleButton text="Negro" styleClass="chip"/>
+                <ToggleButton text="Blanco" styleClass="chip"/>
+                <ToggleButton text="Gris" styleClass="chip"/>
+            </FlowPane>
+                <Label text="Precio" styleClass="grupo"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="txtMinimo" promptText="Desde $"/>
+                    <Label text="–"/>
+                    <TextField fx:id="txtMaximo" promptText="Hasta $"/>
+                </HBox>
+            </VBox>
+            <HBox spacing="12">
+                <Button text="Limpiar" onAction="#limpiarFiltros" styleClass="btn-borde" prefWidth="110" prefHeight="40"/>
+                <Button fx:id="btnVerResultados" text="Ver resultados" onAction="#aplicarFiltros" styleClass="btn-primario" HBox.hgrow="ALWAYS" maxWidth="Infinity" prefHeight="40"/>
+            </HBox>
+        </VBox>
+    </StackPane>
+</StackPane>

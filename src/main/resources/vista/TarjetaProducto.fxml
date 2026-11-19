@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.Text?>
+
+<!--
+  Tarjeta de un producto en el catálogo y en Me gusta.
+  Usa fx:root: la clase TarjetaProducto (un VBox) carga este archivo y pone la foto, el nombre y los precios.
+-->
+<fx:root type="javafx.scene.layout.VBox" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+         styleClass="tarjeta" prefWidth="220" maxWidth="220">
+    <stylesheets>
+        <URL value="@estilos.css"/>
+    </stylesheets>
+    <StackPane styleClass="fondo-foto" minWidth="218" prefWidth="218" maxWidth="218" minHeight="134" prefHeight="134" maxHeight="134">
+        <ImageView fx:id="imgFoto" fitWidth="196" fitHeight="121" preserveRatio="true"/>
+        <Label fx:id="lblEtiqueta" styleClass="badge" StackPane.alignment="TOP_LEFT">
+            <StackPane.margin><Insets top="8" right="8" bottom="8" left="8"/></StackPane.margin>
+        </Label>
+        <ToggleButton fx:id="btnMeGusta" styleClass="btn-me-gusta" onAction="#alternarMeGusta" StackPane.alignment="TOP_RIGHT">
+            <graphic><Group><SVGPath styleClass="ico,ico-oscuro" scaleX="0.75" scaleY="0.75" content="M12 20s-7.5-4.6-7.5-10.2A4.2 4.2 0 0 1 12 7.3a4.2 4.2 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></Group></graphic>
+            <StackPane.margin><Insets top="8" right="8" bottom="8" left="8"/></StackPane.margin>
+        </ToggleButton>
+    </StackPane>
+    <VBox spacing="4">
+        <padding><Insets top="10" right="12" bottom="12" left="12"/></padding>
+        <Label fx:id="lblNombre" styleClass="nombre" maxWidth="196" textOverrun="ELLIPSIS"/>
+        <HBox spacing="6" alignment="BASELINE_LEFT">
+            <Label fx:id="lblPrecio" styleClass="precio"/>
+            <Text fx:id="txtAntes" styleClass="precio-antes"/>
+        </HBox>
+        <Button fx:id="btnComprar" text="Comprar" styleClass="btn-primario" maxWidth="Infinity" onAction="#comprar">
+            <graphic><Group><SVGPath styleClass="ico,ico-blanco" scaleX="0.667" scaleY="0.667" content="M5 8h14l1 12H4L5 8Z M9 9V6a3 3 0 0 1 6 0v3"/></Group></graphic>
+            <VBox.margin><Insets top="6"/></VBox.margin>
+        </Button>
+    </VBox>
+</fx:root>

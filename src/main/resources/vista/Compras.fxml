@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.*?>
+
+<!-- 11 · Mis compras -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="vista.frmCompras" styleClass="pantalla">
+    <stylesheets>
+        <URL value="@estilos.css"/>
+        <URL value="@cuenta.css"/>
+    </stylesheets>
+    <Hyperlink fx:id="lnkVolver" text="Volver al catálogo" onAction="#volver">
+        <graphic><Group><SVGPath styleClass="ico,ico-azul" scaleX="0.667" scaleY="0.667" content="m15 6-6 6 6 6"/></Group></graphic>
+    </Hyperlink>
+    <HBox spacing="16" alignment="CENTER_LEFT">
+        <Label text="Mis compras" styleClass="titulo"/>
+        <!-- Filtros: userData es el nombre del filtro; frmCompras le agrega la cantidad al texto -->
+        <HBox fx:id="boxFiltros" spacing="6">
+            <ToggleButton text="Todas" userData="Todas" styleClass="chip" selected="true"/>
+            <ToggleButton text="En proceso" userData="En proceso" styleClass="chip"/>
+            <ToggleButton text="Entregadas" userData="Entregadas" styleClass="chip"/>
+            <ToggleButton text="Rechazadas" userData="Rechazadas" styleClass="chip"/>
+        </HBox>
+    </HBox>
+    <StackPane VBox.vgrow="ALWAYS">
+        <ScrollPane fitToWidth="true">
+            <VBox fx:id="lista" spacing="10"/>
+        </ScrollPane>
+        <VBox fx:id="boxVacio" styleClass="vacio" visible="false">
+            <Label text="No hay compras en esta sección" styleClass="subtitulo"/>
+            <Button text="Ver catálogo" onAction="#volver" styleClass="btn-primario"/>
+        </VBox>
+    </StackPane>
+</VBox>

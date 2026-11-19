@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- 17 · Admin – Reseñas -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="vista.frmAdminResenas" styleClass="zona-admin">
+    <stylesheets>
+        <URL value="@estilos.css"/>
+        <URL value="@admin.css"/>
+    </stylesheets>
+    <!-- Pestañas: frmAdminResenas filtra según el texto de la pestaña elegida -->
+    <HBox fx:id="boxPestanas" spacing="6">
+        <ToggleButton fx:id="tabTodas" text="Todas" styleClass="chip" selected="true"/>
+        <ToggleButton text="Visibles" styleClass="chip"/>
+        <ToggleButton text="Ocultas" styleClass="chip"/>
+    </HBox>
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="caja">
+        <VBox fx:id="lista"/>
+    </ScrollPane>
+</VBox>

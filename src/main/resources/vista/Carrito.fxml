@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.*?>
+
+<!-- 08 · Carrito (lista doble) -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="vista.frmCarrito" styleClass="pantalla">
+    <stylesheets>
+        <URL value="@estilos.css"/>
+        <URL value="@cuenta.css"/>
+    </stylesheets>
+    <Hyperlink fx:id="lnkVolver" text="Seguir comprando" onAction="#volver">
+        <graphic><Group><SVGPath styleClass="ico,ico-azul" scaleX="0.667" scaleY="0.667" content="m15 6-6 6 6 6"/></Group></graphic>
+    </Hyperlink>
+    <Label fx:id="lblTitulo" text="Carrito" styleClass="titulo"/>
+    <StackPane fx:id="contenido" VBox.vgrow="ALWAYS">
+        <HBox fx:id="boxConProductos" spacing="20">
+            <ScrollPane fitToWidth="true" HBox.hgrow="ALWAYS">
+                <VBox fx:id="listaItems" spacing="12"/>
+            </ScrollPane>
+            <VBox styleClass="caja, caja-pad" spacing="14" prefWidth="360" minWidth="360" maxHeight="-Infinity">
+                <Label text="Resumen de compra" styleClass="subtitulo"/>
+                <GridPane vgap="12">
+                    <columnConstraints><ColumnConstraints hgrow="ALWAYS"/><ColumnConstraints halignment="RIGHT"/></columnConstraints>
+                    <Label fx:id="lblCantidad" text="Productos" styleClass="gris"/>
+                    <Label fx:id="lblSubtotal" styleClass="negrita" GridPane.columnIndex="1"/>
+                    <Label text="Descuentos" styleClass="gris" GridPane.rowIndex="1"/>
+                    <Label fx:id="lblDescuentos" styleClass="verde" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    <Label text="Envío" styleClass="gris" GridPane.rowIndex="2"/>
+                    <Label fx:id="lblEnvio" styleClass="verde" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                </GridPane>
+                <Region styleClass="separador"/>
+                <HBox alignment="CENTER_LEFT">
+                    <Label text="Total" styleClass="subtitulo"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="lblTotal" styleClass="total"/>
+                </HBox>
+                <Button text="Continuar compra" onAction="#continuar" styleClass="btn-primario, btn-grande" maxWidth="Infinity"/>
+                <Label text="Pago por transferencia con comprobante" styleClass="gris-claro" maxWidth="Infinity" alignment="CENTER"/>
+            </VBox>
+        </HBox>
+        <VBox fx:id="boxVacio" styleClass="vacio" visible="false">
+            <Label text="Tu carrito está vacío" styleClass="subtitulo"/>
+            <Label text="Explora el catálogo y agrega lo que te guste." styleClass="gris"/>
+            <Button text="Ver catálogo" onAction="#volver" styleClass="btn-primario"/>
+        </VBox>
+    </StackPane>
+</VBox>

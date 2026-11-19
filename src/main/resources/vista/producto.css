@@ -1,0 +1,18 @@
+/* producto.css — detalle de producto */
+.precio-grande { -fx-font-size: 30px; -fx-font-weight: 800; }
+.caja-pad { -fx-padding: 14 16 14 16; }
+.promedio { -fx-font-size: 32px; -fx-font-weight: 800; }
+.btn-chico { -fx-font-size: 11px; -fx-padding: 5 10 5 10; }
+.miniatura { -fx-background-color: #EEF3FA; -fx-border-color: -linea; -fx-cursor: hand; }
+.miniatura.activa { -fx-border-color: -azul; -fx-border-width: 2; }
+.talla { -fx-background-color: white; -fx-border-color: -linea; -fx-text-fill: -texto; -fx-min-width: 54; -fx-pref-height: 34; -fx-padding: 0; }
+.talla:hover { -fx-border-color: -azul; }
+.talla:selected { -fx-background-color: -noche; -fx-border-color: -noche; -fx-text-fill: white; }
+.talla:disabled { -fx-opacity: 0.4; }
+.color { -fx-background-color: white; -fx-border-color: -linea; -fx-text-fill: -texto; -fx-padding: 7 14 7 14; }
+.color:selected { -fx-border-color: -azul; -fx-border-width: 2; -fx-text-fill: -azul; -fx-background-color: -azul-suave; }
+.btn-deseo { -fx-background-color: white; -fx-border-color: -azul; -fx-border-width: 1.5; -fx-text-fill: -azul; -fx-graphic-text-gap: 8; }
+.btn-deseo:selected { -fx-background-color: -azul-suave; }
+.resena { -fx-background-color: #F8FAFC; -fx-border-color: -linea; -fx-padding: 10 12 10 12; -fx-spacing: 6; }
+
+.btn-deseo:selected .ico { -fx-fill: -azul; }   /* corazón lleno cuando ya está en la lista de deseos */

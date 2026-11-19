@@ -1,0 +1,44 @@
+/* admin.css — panel del administrador */
+.lateral { -fx-background-color: -noche; -fx-padding: 20 10 16 10; -fx-spacing: 4; -fx-pref-width: 210; -fx-min-width: 210; }
+.lateral .rol { -fx-text-fill: #5AA2FF; -fx-font-size: 10px; -fx-font-weight: 800; -fx-padding: 4 10 14 10; }
+.nav { -fx-background-color: transparent; -fx-text-fill: rgba(255,255,255,0.8); -fx-alignment: center-left;
+       -fx-pref-width: 190; -fx-pref-height: 40; -fx-padding: 0 12 0 12; -fx-graphic-text-gap: 12; -fx-font-weight: 500; -fx-content-display: left; }
+.nav:hover { -fx-background-color: rgba(255,255,255,0.08); }
+.nav:selected { -fx-background-color: -azul; -fx-text-fill: white; -fx-font-weight: 700; }
+.lateral .usuario .label { -fx-text-fill: white; }
+.lateral .usuario .gris { -fx-text-fill: rgba(255,255,255,0.6); }
+.lateral .salir { -fx-text-fill: rgba(255,255,255,0.8); }
+.cabecera-admin { -fx-background-color: white; -fx-border-color: transparent transparent -linea transparent; -fx-padding: 10 20 10 20; -fx-spacing: 12; -fx-alignment: center-left; -fx-pref-height: 56; }
+.cabecera-admin .titulo { -fx-font-size: 18px; }
+.zona-admin { -fx-padding: 16 20 16 20; -fx-spacing: 14; }
+.kpi { -fx-background-color: white; -fx-border-color: -linea; -fx-padding: 14 16 14 14; -fx-spacing: 12; -fx-alignment: center-left; }
+.kpi .icono-kpi { -fx-background-color: -azul-suave; -fx-min-width: 40; -fx-min-height: 40; -fx-alignment: center; }
+.kpi .valor { -fx-font-size: 20px; -fx-font-weight: 800; }
+.btn-accion { -fx-padding: 5; -fx-min-width: 30; -fx-min-height: 30; }
+.btn-aprobar { -fx-background-color: #DCFCE7; }
+.btn-rechazar { -fx-background-color: #FFE4E6; }
+.btn-ver { -fx-background-color: -azul-suave; }
+.btn-gris { -fx-background-color: #F1F5F9; }
+.segmento { -fx-background-color: #EEF2F7; -fx-padding: 4; -fx-spacing: 0; }
+.segmento .toggle-button { -fx-background-color: transparent; -fx-pref-height: 50; -fx-alignment: center-left; -fx-graphic-text-gap: 10; -fx-text-fill: -texto; -fx-padding: 0 10 0 10; }
+.segmento .toggle-button:selected { -fx-background-color: white; -fx-border-color: -azul; -fx-border-width: 1.5; -fx-text-fill: -azul; }
+.segmento .toggle-button:disabled { -fx-opacity: 0.55; }
+.talla-admin { -fx-background-color: white; -fx-border-color: -linea; -fx-text-fill: -gris; -fx-min-width: 40; -fx-pref-height: 32; -fx-padding: 0; }
+.talla-admin:selected { -fx-background-color: -azul; -fx-border-color: -azul; -fx-text-fill: white; }
+.matriz { -fx-background-color: #F8FAFC; -fx-border-color: -linea; -fx-padding: 10 14 10 14; -fx-hgap: 8; -fx-vgap: 8; }
+.matriz .text-field { -fx-alignment: center; -fx-pref-height: 30; -fx-font-weight: 700; -fx-padding: 0; }
+.matriz .cero { -fx-background-color: #FFF1F3; -fx-border-color: -rojo; -fx-text-fill: -rojo; }
+.color-chip { -fx-background-color: -azul-suave; -fx-text-fill: -marino; -fx-font-weight: 600; -fx-padding: 6 8 6 10; -fx-content-display: right; -fx-graphic-text-gap: 8; }
+.nota-aviso { -fx-text-fill: -ambar; -fx-font-weight: 600; -fx-font-size: 12px; }
+.nota-edicion { -fx-background-color: -azul-suave; -fx-padding: 10 12 10 12; -fx-spacing: 10; -fx-alignment: center-left; }
+.nota-edicion .label { -fx-text-fill: -marino; -fx-font-size: 12px; }
+.imagen-form { -fx-background-color: #EEF3FA; -fx-border-color: -linea; }
+.imagen-nueva { -fx-background-color: #F7FAFF; -fx-border-color: -azul; -fx-border-style: segments(4, 4); -fx-cursor: hand; }
+.fila-resena { -fx-background-color: white; -fx-border-color: transparent transparent -linea transparent; -fx-padding: 12 14 12 14; -fx-spacing: 12; -fx-alignment: center-left; }
+.tarjeta-foto { -fx-background-color: white; -fx-border-color: -linea; -fx-spacing: 8; -fx-padding: 0 0 10 0; }
+
+/* Guías de tallas (AdminImagenes.fxml) */
+.caja-guia { -fx-border-color: -linea; -fx-padding: 14; }
+.guia-celda { -fx-pref-width: 66; -fx-alignment: center; -fx-padding: 8 0 8 0; -fx-border-color: -linea; }
+.guia-cabecera { -fx-background-color: -azul-suave; -fx-text-fill: -marino; -fx-font-weight: 700; }
+.guia-cabecera-1 { -fx-background-color: -marino; -fx-text-fill: white; -fx-font-weight: 700; }

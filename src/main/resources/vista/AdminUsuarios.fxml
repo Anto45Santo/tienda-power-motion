@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.*?>
+
+<!-- 18 · Admin – Usuarios -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="vista.frmAdminUsuarios" styleClass="zona-admin">
+    <stylesheets>
+        <URL value="@estilos.css"/>
+        <URL value="@admin.css"/>
+    </stylesheets>
+    <!-- Indicadores (los números los pone frmAdminUsuarios) -->
+    <HBox fx:id="boxKpis" spacing="12">
+        <HBox styleClass="kpi" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+            <StackPane styleClass="icono-kpi"><Group><SVGPath styleClass="ico,ico-azul" scaleX="0.833" scaleY="0.833" content="M5.8 8a3.2 3.2 0 1 0 6.4 0a3.2 3.2 0 1 0 -6.4 0 M3 20c.5-3.5 2.6-5.5 6-5.5s5.5 2 6 5.5 M14.5 9a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0 M16.5 14.5c2.5 0 4 1.7 4.5 4.5"/></Group></StackPane>
+            <VBox spacing="2">
+                <Label text="Usuarios" styleClass="gris"/>
+                <Label fx:id="lblUsuarios" styleClass="valor"/>
+            </VBox>
+        </HBox>
+        <HBox styleClass="kpi" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+            <StackPane styleClass="icono-kpi"><Group><SVGPath styleClass="ico,ico-azul" scaleX="0.833" scaleY="0.833" content="M5 8h14l1 12H4L5 8Z M9 9V6a3 3 0 0 1 6 0v3"/></Group></StackPane>
+            <VBox spacing="2">
+                <Label text="Con compras" styleClass="gris"/>
+                <Label fx:id="lblConCompras" styleClass="valor"/>
+            </VBox>
+        </HBox>
+        <HBox styleClass="kpi" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+            <StackPane styleClass="icono-kpi"><Group><SVGPath styleClass="ico,ico-azul" scaleX="0.833" scaleY="0.833" content="M12 20s-7.5-4.6-7.5-10.2A4.2 4.2 0 0 1 12 7.3a4.2 4.2 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></Group></StackPane>
+            <VBox spacing="2">
+                <Label text="Me gusta" styleClass="gris"/>
+                <Label fx:id="lblMeGusta" styleClass="valor"/>
+            </VBox>
+        </HBox>
+        <HBox styleClass="kpi" HBox.hgrow="ALWAYS" maxWidth="Infinity">
+            <StackPane styleClass="icono-kpi"><Group><SVGPath styleClass="ico,ico-azul" scaleX="0.833" scaleY="0.833" content="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z M9 12l2 2 4-4"/></Group></StackPane>
+            <VBox spacing="2">
+                <Label text="Administradores" styleClass="gris"/>
+                <Label fx:id="lblAdmins" styleClass="valor"/>
+            </VBox>
+        </HBox>
+    </HBox>
+    <HBox spacing="6">
+        <Region HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="txtBuscar" promptText="Buscar por nombre o correo…" prefWidth="260"/>
+    </HBox>
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colUsuario" text="USUARIO" prefWidth="300" minWidth="250" sortable="false" reorderable="false"/>
+            <TableColumn fx:id="colTelefono" text="TELÉFONO" prefWidth="130" sortable="false" reorderable="false"/>
+            <TableColumn fx:id="colRol" text="ROL" prefWidth="110" sortable="false" reorderable="false"/>
+            <TableColumn fx:id="colCompras" text="COMPRAS" prefWidth="90" sortable="false" reorderable="false"/>
+            <TableColumn fx:id="colDesde" text="DESDE" prefWidth="130" sortable="false" reorderable="false"/>
+            <TableColumn fx:id="colAcciones" text="ACCIONES" prefWidth="90" sortable="false" reorderable="false"/>
+        </columns>
+        <placeholder><Label text="No hay usuarios con ese nombre o correo."/></placeholder>
+    </TableView>
+</VBox>

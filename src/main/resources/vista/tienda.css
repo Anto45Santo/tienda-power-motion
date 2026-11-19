@@ -1,0 +1,14 @@
+/* tienda.css — barra superior del cliente */
+.barra { -fx-background-color: -noche; -fx-padding: 10 20 10 20; -fx-pref-height: 56; }
+.barra .logo { -fx-cursor: hand; -fx-padding: 0 14 0 0; }
+.btn-barra { -fx-background-color: rgba(255,255,255,0.10); -fx-text-fill: white; -fx-pref-height: 36; -fx-padding: 0 10 0 10; -fx-graphic-text-gap: 8; }
+.btn-barra:hover, .btn-barra:showing { -fx-background-color: -azul; }
+.btn-barra > .label { -fx-text-fill: white; }
+.btn-barra > .arrow-button > .arrow { -fx-background-color: white; }
+.btn-usuario .arrow-button { -fx-padding: 0; }
+.btn-usuario .arrow { -fx-padding: 0; -fx-shape: ""; }
+.buscador .text-field { -fx-border-width: 0; -fx-pref-height: 36; }
+.btn-buscar { -fx-background-color: -azul; -fx-min-width: 44; -fx-pref-width: 44; -fx-min-height: 36; -fx-pref-height: 36; -fx-padding: 0; -fx-alignment: center; -fx-background-radius: 0; }
+.btn-buscar:hover { -fx-background-color: -azul-2; }
+.contador { -fx-translate-x: 6; -fx-translate-y: -6; }
+.cabecera-menu { -fx-padding: 6 6 8 6; -fx-spacing: 10; -fx-alignment: center-left; }

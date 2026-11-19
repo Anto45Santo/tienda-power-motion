@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.*?>
+
+<!-- 16 · Admin – Imágenes -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="vista.frmAdminImagenes" styleClass="zona-admin">
+    <stylesheets>
+        <URL value="@estilos.css"/>
+        <URL value="@admin.css"/>
+    </stylesheets>
+    <VBox styleClass="caja" spacing="12">
+        <padding><Insets top="14" right="18" bottom="16" left="18"/></padding>
+        <HBox alignment="CENTER_LEFT" spacing="12">
+            <Label text="Fotos de la bienvenida" styleClass="subtitulo"/>
+            <Label text="Rotan en la pantalla de inicio en este orden (lista circular)" styleClass="gris"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="btnAgregar" text="Agregar foto" onAction="#agregarFoto" styleClass="btn-primario">
+                <graphic><Group><SVGPath styleClass="ico,ico-blanco" scaleX="0.667" scaleY="0.667" content="M12 5v14M5 12h14"/></Group></graphic>
+            </Button>
+        </HBox>
+        <HBox fx:id="boxFotos" spacing="14"/>
+    </VBox>
+    <VBox styleClass="caja" spacing="12" VBox.vgrow="ALWAYS">
+        <padding><Insets top="14" right="18" bottom="16" left="18"/></padding>
+        <HBox alignment="CENTER_LEFT" spacing="12">
+            <Label text="Guías de tallas" styleClass="subtitulo"/>
+            <Label text="Se abren con el enlace “Guía de tallas” del detalle de producto" styleClass="gris"/>
+        </HBox>
+        <!-- Guías de tallas (solo lectura) -->
+        <HBox fx:id="boxGuias" spacing="14">
+            <VBox spacing="10" styleClass="caja-guia" HBox.hgrow="ALWAYS">
+                <Label text="Calzado (US → cm)" styleClass="negrita"/>
+                <GridPane hgap="2" vgap="2">
+                    <Label text="US" styleClass="guia-celda, guia-cabecera-1" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <Label text="cm" styleClass="guia-celda" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <Label text="7" styleClass="guia-celda, guia-cabecera" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                    <Label text="25" styleClass="guia-celda" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    <Label text="8" styleClass="guia-celda, guia-cabecera" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                    <Label text="26" styleClass="guia-celda" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                    <Label text="9" styleClass="guia-celda, guia-cabecera" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                    <Label text="27" styleClass="guia-celda" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                    <Label text="10" styleClass="guia-celda, guia-cabecera" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+                    <Label text="28" styleClass="guia-celda" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+                    <Label text="11" styleClass="guia-celda, guia-cabecera" GridPane.columnIndex="5" GridPane.rowIndex="0"/>
+                    <Label text="29" styleClass="guia-celda" GridPane.columnIndex="5" GridPane.rowIndex="1"/>
+                </GridPane>
+            </VBox>
+            <VBox spacing="10" styleClass="caja-guia" HBox.hgrow="ALWAYS">
+                <Label text="Textil (talla → cm de pecho)" styleClass="negrita"/>
+                <GridPane hgap="2" vgap="2">
+                    <Label text="Talla" styleClass="guia-celda, guia-cabecera-1" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                    <Label text="Pecho" styleClass="guia-celda" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                    <Label text="S" styleClass="guia-celda, guia-cabecera" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                    <Label text="90" styleClass="guia-celda" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    <Label text="M" styleClass="guia-celda, guia-cabecera" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+                    <Label text="96" styleClass="guia-celda" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                    <Label text="L" styleClass="guia-celda, guia-cabecera" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                    <Label text="102" styleClass="guia-celda" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                    <Label text="XL" styleClass="guia-celda, guia-cabecera" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+                    <Label text="108" styleClass="guia-celda" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+                    <Label text="XXL" styleClass="guia-celda, guia-cabecera" GridPane.columnIndex="5" GridPane.rowIndex="0"/>
+                    <Label text="114" styleClass="guia-celda" GridPane.columnIndex="5" GridPane.rowIndex="1"/>
+                </GridPane>
+            </VBox>
+        </HBox>
+    </VBox>
+</VBox>

@@ -1,0 +1,240 @@
+/* =====================================================================
+   estilos.css — estilos COMUNES a todas las pantallas de Power Motion.
+   Cada pantalla tiene además su propio CSS (inicio.css, login.css, …)
+   con lo que solo usa esa pantalla.
+   ===================================================================== */
+
+.root {
+    -noche:  #0B1220;
+    -marino: #172B4D;
+    -azul:   #2583FF;
+    -azul-2: #1C6FE0;
+    -azul-suave: #E8F1FF;
+    -hielo:  #F8FAFC;
+    -fondo:  #F4F7FB;
+    -linea:  #E2E8F0;
+    -texto:  #0B1220;
+    -gris:   #5B6B82;
+    -gris-2: #8A99AE;
+    -verde:  #16A34A;
+    -ambar:  #D97706;
+    -rojo:   #E11D48;
+
+    -fx-font-family: "Inter";
+    -fx-font-size: 13px;
+    -fx-background-color: -fondo;
+}
+
+/* ---------- Texto ---------- */
+.label { -fx-text-fill: -texto; }
+.titulo       { -fx-font-size: 24px; -fx-font-weight: 800; }
+.titulo-grande{ -fx-font-size: 30px; -fx-font-weight: 800; }
+.subtitulo    { -fx-font-size: 15px; -fx-font-weight: 800; }
+.gris         { -fx-text-fill: -gris; }
+.gris-claro   { -fx-text-fill: -gris-2; }
+.etiqueta     { -fx-text-fill: -azul; -fx-font-size: 11px; -fx-font-weight: 800; }
+.precio       { -fx-font-size: 16px; -fx-font-weight: 800; }
+.precio-antes { -fx-fill: #8A99AE; -fx-font-size: 11px; -fx-strikethrough: true; }   /* nodo Text */
+.verde        { -fx-text-fill: -verde; -fx-font-weight: 700; }
+.rojo         { -fx-text-fill: -rojo; }
+.negrita      { -fx-font-weight: 700; }
+.campo-label  { -fx-font-size: 13px; -fx-font-weight: 600; }
+.error        { -fx-text-fill: -rojo; -fx-font-size: 12px; -fx-font-weight: 600; }
+
+/* ---------- Botones (rectangulares) ---------- */
+.button, .toggle-button, .menu-button {
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-font-weight: 700;
+    -fx-cursor: hand;
+    -fx-padding: 8 16 8 16;
+}
+.btn-primario { -fx-background-color: -azul; -fx-text-fill: white; }
+.btn-primario:hover { -fx-background-color: -azul-2; }
+.btn-primario:disabled { -fx-opacity: 0.45; }
+.btn-oscuro { -fx-background-color: -noche; -fx-text-fill: white; }
+.btn-oscuro:hover { -fx-background-color: -marino; }
+.btn-borde { -fx-background-color: white; -fx-text-fill: -texto; -fx-border-color: -texto; -fx-border-width: 1.5; }
+.btn-borde:hover { -fx-background-color: -hielo; }
+.btn-suave { -fx-background-color: -azul-suave; -fx-text-fill: -azul; }
+.btn-suave:hover { -fx-background-color: #D6E7FF; }
+.btn-peligro { -fx-background-color: #FFF1F3; -fx-text-fill: -rojo; -fx-border-color: -rojo; }
+.btn-exito { -fx-background-color: #DCFCE7; -fx-text-fill: -verde; }
+.btn-icono { -fx-padding: 6; -fx-min-width: 30; -fx-min-height: 30; -fx-background-color: white; -fx-border-color: -linea; }
+.btn-icono:hover { -fx-border-color: -azul; }
+.btn-transparente { -fx-background-color: rgba(255,255,255,0.08); -fx-text-fill: white; -fx-border-color: rgba(255,255,255,0.4); }
+.btn-transparente:hover { -fx-background-color: rgba(255,255,255,0.16); }
+.btn-grande { -fx-font-size: 15px; -fx-pref-height: 46; }
+
+.hyperlink { -fx-text-fill: -azul; -fx-font-weight: 700; -fx-padding: 0; -fx-border-width: 0; }
+.hyperlink:visited { -fx-text-fill: -azul; }
+.link-rojo, .link-rojo:visited { -fx-text-fill: -rojo; }
+
+/* Chips de filtro (ToggleButton) */
+.chip {
+    -fx-background-color: white; -fx-border-color: -linea;
+    -fx-text-fill: -texto; -fx-font-size: 12px; -fx-font-weight: 600;
+    -fx-padding: 6 13 6 13;
+}
+.chip:hover { -fx-border-color: -azul; }
+.chip:selected { -fx-background-color: -azul; -fx-border-color: -azul; -fx-text-fill: white; }
+
+/* Corazón de "me gusta" (ToggleButton con icono) */
+.btn-me-gusta { -fx-background-color: white; -fx-border-color: -linea; -fx-padding: 5; -fx-min-width: 30; -fx-min-height: 30; }
+.btn-me-gusta:hover { -fx-border-color: -azul; }
+.btn-me-gusta:selected { -fx-background-color: white; }
+.btn-me-gusta:selected .ico { -fx-stroke: -azul; -fx-fill: -azul; }   /* corazón lleno cuando le gusta */
+
+/* ---------- Campos ---------- */
+.text-field, .password-field, .text-area, .combo-box, .spinner {
+    -fx-background-color: white;
+    -fx-background-radius: 0;
+    -fx-border-color: -linea;
+    -fx-border-radius: 0;
+    -fx-prompt-text-fill: -gris-2;
+    -fx-highlight-fill: -azul;
+}
+.text-field, .password-field { -fx-pref-height: 36; -fx-padding: 0 10 0 10; }
+.text-field:focused, .password-field:focused, .text-area:focused, .combo-box:focused, .spinner:focused {
+    -fx-border-color: -azul; -fx-border-width: 1.5;
+}
+.text-area .content { -fx-background-color: white; }
+.combo-box { -fx-pref-height: 36; }
+.combo-box .list-cell { -fx-background-color: transparent; -fx-padding: 4 8 4 8; }
+.combo-box .arrow-button { -fx-background-color: transparent; }
+.combo-box .arrow { -fx-background-color: -gris; }
+.combo-box:editable .text-field { -fx-border-width: 0; -fx-background-color: transparent; }
+.combo-box-popup .list-view { -fx-background-radius: 0; -fx-border-color: -linea; }
+.combo-box-popup .list-cell:filled:hover, .combo-box-popup .list-cell:filled:selected { -fx-background-color: -azul; -fx-text-fill: white; }
+.spinner .text-field { -fx-border-width: 0; -fx-alignment: center; -fx-font-weight: 800; }
+.spinner .increment-arrow-button, .spinner .decrement-arrow-button { -fx-background-color: white; -fx-background-radius: 0; }
+
+/* Campo con icono: HBox que contiene icono + TextField sin borde */
+.campo-icono { -fx-background-color: white; -fx-border-color: -linea; -fx-padding: 0 4 0 12; -fx-spacing: 6; -fx-alignment: center-left; -fx-pref-height: 44; }
+.campo-icono:focused-within { -fx-border-color: -azul; -fx-border-width: 1.5; }
+.campo-icono .text-field, .campo-icono .password-field { -fx-border-width: 0; -fx-background-color: transparent; -fx-pref-height: 40; }
+
+.check-box .box { -fx-background-color: white; -fx-border-color: #C3CDDB; -fx-background-radius: 0; -fx-border-radius: 0; }
+.check-box:selected .box { -fx-background-color: -azul; -fx-border-color: -azul; }
+.check-box:selected .mark { -fx-background-color: white; }
+
+/* ---------- Cajas y tarjetas ---------- */
+.caja { -fx-background-color: white; -fx-border-color: -linea; }
+.caja-oscura { -fx-background-color: -noche; }
+.fondo-foto { -fx-background-color: #EEF3FA; }
+.separador { -fx-background-color: -linea; -fx-pref-height: 1; -fx-min-height: 1; -fx-max-height: 1; }
+
+.badge { -fx-background-color: -azul; -fx-text-fill: white; -fx-font-size: 10px; -fx-font-weight: 800; -fx-padding: 3 7 3 7; }
+.badge-oscuro { -fx-background-color: -noche; -fx-text-fill: white; -fx-font-size: 10px; -fx-font-weight: 800; -fx-padding: 3 7 3 7; }
+.contador { -fx-background-color: -azul; -fx-text-fill: white; -fx-font-size: 10px; -fx-font-weight: 800; -fx-padding: 0 4 0 4; -fx-min-width: 16; -fx-alignment: center; }
+
+.estado { -fx-font-size: 11px; -fx-font-weight: 700; -fx-padding: 3 9 3 9; }
+.estado-pendiente { -fx-background-color: #FEF3C7; -fx-text-fill: #B45309; }
+.estado-aprobado  { -fx-background-color: #DCFCE7; -fx-text-fill: #15803D; }
+.estado-enviado   { -fx-background-color: #E0E7FF; -fx-text-fill: #4338CA; }
+.estado-rechazado { -fx-background-color: #FFE4E6; -fx-text-fill: #BE123C; }
+.estado-neutro    { -fx-background-color: #F1F5F9; -fx-text-fill: #475569; }
+.estado-admin     { -fx-background-color: -azul-suave; -fx-text-fill: #1D4ED8; }
+
+.avatar { -fx-fill: -azul; }
+.avatar-oscuro { -fx-fill: -marino; }
+.avatar-texto { -fx-text-fill: white; -fx-font-weight: 800; }
+
+/* Tarjeta de producto del catálogo */
+.tarjeta { -fx-background-color: white; -fx-border-color: -linea; -fx-cursor: hand; }
+.tarjeta:hover { -fx-border-color: -azul; }
+.tarjeta .nombre { -fx-font-weight: 600; }
+
+/* Aviso flotante (toast) */
+.aviso { -fx-background-color: -noche; -fx-text-fill: white; -fx-padding: 10 16 10 16; -fx-font-weight: 600; }
+
+/* ---------- Menús desplegables ---------- */
+.context-menu { -fx-background-color: white; -fx-background-radius: 0; -fx-border-color: -linea; -fx-padding: 4 0 4 0;
+                -fx-effect: dropshadow(gaussian, rgba(11,18,32,0.12), 10, 0, 2, 3); }
+.menu-item { -fx-padding: 8 16 8 16; }
+.menu-item .label { -fx-text-fill: -texto; -fx-font-size: 13px; }
+.menu-item:focused { -fx-background-color: -azul; }
+.menu-item:focused .label { -fx-text-fill: white; }
+.menu .right-container .arrow { -fx-background-color: -gris; }
+.menu:focused .right-container .arrow { -fx-background-color: white; }
+.separator-menu-item .line { -fx-border-color: -linea transparent transparent transparent; -fx-padding: 0; }
+.menu-salir .label { -fx-text-fill: -rojo; }
+.menu-salir:focused { -fx-background-color: #FFF1F3; }
+.menu-salir:focused .label { -fx-text-fill: -rojo; }
+
+/* ---------- Tablas (admin) ---------- */
+.table-view { -fx-background-color: white; -fx-border-color: -linea; -fx-table-cell-border-color: transparent; -fx-padding: 0; }
+.table-view .column-header-background { -fx-background-color: #F8FAFC; -fx-border-color: transparent transparent -linea transparent; }
+.table-view .column-header { -fx-background-color: transparent; -fx-pref-height: 36; -fx-border-color: transparent; }
+.table-view .column-header .label { -fx-text-fill: -gris; -fx-font-size: 11px; -fx-font-weight: 700; -fx-alignment: center-left; -fx-padding: 0 0 0 6; }
+.table-view .filler { -fx-background-color: #F8FAFC; }
+.table-row-cell { -fx-background-color: white; -fx-border-color: transparent transparent -linea transparent; -fx-cell-size: 52; }
+.table-row-cell:hover { -fx-background-color: #F7FAFF; }
+.table-row-cell:selected { -fx-background-color: -azul-suave; }
+.table-row-cell:selected .label, .table-row-cell:selected .table-cell { -fx-text-fill: -texto; }
+.table-cell { -fx-alignment: center-left; -fx-padding: 0 6 0 6; -fx-text-fill: -texto; }
+.table-view .placeholder .label { -fx-text-fill: -gris; }
+
+/* ---------- Paginación ---------- */
+.pagination { -fx-page-information-visible: false; -fx-arrows-visible: true; }
+/* Zona de los botones: altura fija para que nunca se recorten los números */
+.pagination > .pagination-control { -fx-padding: 6 0 2 0; -fx-min-height: 44; }
+.pagination > .pagination-control > .control-box { -fx-spacing: 6; -fx-alignment: center; }
+/* Números: cuadros de 32 x 32 con el texto centrado */
+.pagination > .pagination-control > .control-box > .number-button {
+    -fx-min-width: 32; -fx-min-height: 32; -fx-pref-width: 32; -fx-pref-height: 32;
+    -fx-padding: 0; -fx-alignment: center; -fx-text-alignment: center;
+    -fx-font-size: 13px; -fx-font-weight: 700;
+    -fx-background-color: white; -fx-background-radius: 0;
+    -fx-border-color: -linea; -fx-border-radius: 0; -fx-text-fill: -texto;
+}
+.pagination > .pagination-control > .control-box > .number-button:hover { -fx-border-color: -azul; -fx-text-fill: -azul; }
+.pagination > .pagination-control > .control-box > .number-button:selected {
+    -fx-background-color: -azul; -fx-border-color: -azul; -fx-text-fill: white;
+}
+.pagination > .pagination-control > .control-box > .number-button:focused { -fx-background-insets: 0; }
+/* Flechas: mismo tamaño que los números y el triángulo centrado */
+.pagination > .pagination-control > .control-box > .left-arrow-button,
+.pagination > .pagination-control > .control-box > .right-arrow-button {
+    -fx-min-width: 32; -fx-min-height: 32; -fx-pref-width: 32; -fx-pref-height: 32;
+    -fx-padding: 0; -fx-alignment: center;
+    -fx-background-color: white; -fx-background-radius: 0; -fx-border-color: -linea; -fx-border-radius: 0;
+}
+.pagination > .pagination-control > .control-box > .left-arrow-button:hover,
+.pagination > .pagination-control > .control-box > .right-arrow-button:hover { -fx-border-color: -azul; }
+.pagination > .pagination-control > .control-box > .left-arrow-button > .left-arrow,
+.pagination > .pagination-control > .control-box > .right-arrow-button > .right-arrow {
+    -fx-background-color: -texto; -fx-padding: 5 4 5 4;
+}
+.pagination > .pagination-control > .control-box > .left-arrow-button:disabled,
+.pagination > .pagination-control > .control-box > .right-arrow-button:disabled { -fx-opacity: 0.4; }
+
+/* ---------- Scroll ---------- */
+.scroll-pane, .scroll-pane > .viewport { -fx-background-color: transparent; -fx-background-insets: 0; -fx-padding: 0; }
+.scroll-bar:vertical, .scroll-bar:horizontal { -fx-background-color: transparent; -fx-pref-width: 8; }
+.scroll-bar .thumb { -fx-background-color: #C3CDDB; -fx-background-radius: 4; }
+.scroll-bar .increment-button, .scroll-bar .decrement-button { -fx-padding: 0; }
+.scroll-bar .increment-arrow, .scroll-bar .decrement-arrow { -fx-padding: 0; -fx-shape: ""; }
+
+/* ---------- Diálogos ---------- */
+.dialog-pane { -fx-background-color: white; -fx-padding: 0; }
+.dialog-pane .header-panel { -fx-background-color: -noche; -fx-padding: 14 18 14 18; }
+.dialog-pane .header-panel .label { -fx-text-fill: white; -fx-font-size: 15px; -fx-font-weight: 800; }
+.dialog-pane > .content { -fx-padding: 18; }
+.dialog-pane .button-bar .button { -fx-background-color: white; -fx-border-color: -texto; -fx-text-fill: -texto; }
+.dialog-pane .button-bar .button:default { -fx-background-color: -azul; -fx-border-color: -azul; -fx-text-fill: white; }
+.tooltip { -fx-background-color: -noche; -fx-background-radius: 0; -fx-text-fill: white; -fx-font-size: 12px; }
+
+/* ---------- Iconos escritos en el FXML (SVGPath de 24 x 24) ---------- */
+.ico { -fx-fill: transparent; -fx-stroke-width: 1.9; -fx-stroke-line-cap: round; -fx-stroke-line-join: round; }
+.ico-blanco { -fx-stroke: white; }
+.ico-azul   { -fx-stroke: -azul; }
+.ico-oscuro { -fx-stroke: -texto; }
+.ico-gris   { -fx-stroke: -gris-2; }
+.ico-medio  { -fx-stroke: -gris; }
+.ico-celeste { -fx-stroke: #5AA2FF; }
+.ico-rojo   { -fx-stroke: -rojo; }
+.ico-blanco.ico-lleno { -fx-fill: white; }
+.ico-azul.ico-lleno   { -fx-fill: -azul; }
+.ico-ambar.ico-lleno   { -fx-stroke: #F59E0B; -fx-fill: #F59E0B; }
+.ico-apagada.ico-lleno { -fx-stroke: #CBD5E1; -fx-fill: #CBD5E1; }

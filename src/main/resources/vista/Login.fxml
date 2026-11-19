@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.*?>
+
+<!-- 02 · Iniciar sesión -->
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="vista.frmLogin"
+      prefWidth="1200" prefHeight="688">
+    <stylesheets>
+        <URL value="@estilos.css"/>
+        <URL value="@login.css"/>
+    </stylesheets>
+
+    <fx:include source="PanelMarca.fxml"/>
+
+    <StackPane styleClass="formulario" HBox.hgrow="ALWAYS">
+        <VBox spacing="8" maxWidth="480" alignment="CENTER_LEFT">
+            <Label text="Iniciar sesión" styleClass="titulo-grande"/>
+            <Label text="Ingresa con tu correo y contraseña." styleClass="gris"/>
+
+            <Label text="Correo electrónico" styleClass="campo-label">
+                <VBox.margin><Insets top="16"/></VBox.margin>
+            </Label>
+            <HBox fx:id="boxCorreo" styleClass="campo-icono">
+                <Group><SVGPath styleClass="ico,ico-gris" scaleX="0.75" scaleY="0.75" content="M5 5H19a2 2 0 0 1 2 2V17a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2 -2V7a2 2 0 0 1 2 -2z M3 7l9 6 9-6"/></Group>
+                <TextField fx:id="txtCorreo" promptText="tucorreo@ejemplo.com" HBox.hgrow="ALWAYS" onAction="#ingresar"/>
+            </HBox>
+
+            <Label text="Contraseña" styleClass="campo-label">
+                <VBox.margin><Insets top="8"/></VBox.margin>
+            </Label>
+            <HBox fx:id="boxClave" styleClass="campo-icono">
+                <Group><SVGPath styleClass="ico,ico-gris" scaleX="0.75" scaleY="0.75" content="M7 11H17a2 2 0 0 1 2 2V19a2 2 0 0 1 -2 2H7a2 2 0 0 1 -2 -2V13a2 2 0 0 1 2 -2z M8 11V8a4 4 0 0 1 8 0v3"/></Group>
+                <StackPane HBox.hgrow="ALWAYS">
+                    <PasswordField fx:id="txtClave" promptText="Tu contraseña" onAction="#ingresar"/>
+                    <TextField fx:id="txtClaveVisible" visible="false" onAction="#ingresar"/>
+                </StackPane>
+                <ToggleButton fx:id="btnVer" styleClass="btn-icono" style="-fx-border-width: 0;" onAction="#verClave">
+                    <graphic><Group><SVGPath styleClass="ico,ico-medio" scaleX="0.75" scaleY="0.75" content="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z M9 12a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"/></Group></graphic>
+                </ToggleButton>
+            </HBox>
+
+            <Label fx:id="lblError" styleClass="error" managed="false" visible="false"/>
+
+            <Button text="Ingresar" onAction="#ingresar" styleClass="btn-primario, btn-grande" maxWidth="Infinity">
+                <VBox.margin><Insets top="18"/></VBox.margin>
+            </Button>
+
+            <Region styleClass="separador">
+                <VBox.margin><Insets top="22" bottom="14"/></VBox.margin>
+            </Region>
+            <Label text="¿No tienes cuenta?" styleClass="gris" maxWidth="Infinity" alignment="CENTER"/>
+            <Button text="Crear cuenta nueva" onAction="#irRegistro" styleClass="btn-borde" maxWidth="Infinity" prefHeight="44"/>
+
+            <Hyperlink text="← Volver al inicio" onAction="#volver" styleClass="gris">
+                <VBox.margin><Insets top="30"/></VBox.margin>
+            </Hyperlink>
+            <Label text="Prueba: andres.gomez@correo.com / 12345678  ·  admin@powermotion.co / admin123" styleClass="ayuda"/>
+        </VBox>
+    </StackPane>
+</HBox>

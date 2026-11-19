@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.*?>
+
+<!-- 10 · Me gusta (lista de deseos) -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="vista.frmMeGusta" styleClass="pantalla">
+    <stylesheets>
+        <URL value="@estilos.css"/>
+        <URL value="@cuenta.css"/>
+    </stylesheets>
+    <Hyperlink fx:id="lnkVolver" text="Volver al catálogo" onAction="#volver">
+        <graphic><Group><SVGPath styleClass="ico,ico-azul" scaleX="0.667" scaleY="0.667" content="m15 6-6 6 6 6"/></Group></graphic>
+    </Hyperlink>
+    <HBox spacing="12" alignment="BASELINE_LEFT">
+        <Label text="Me gusta" styleClass="titulo"/>
+        <Label fx:id="lblTotal" styleClass="gris"/>
+    </HBox>
+    <StackPane VBox.vgrow="ALWAYS">
+        <!-- Cada producto se muestra con TarjetaProducto.fxml, igual que en el catálogo -->
+        <Pagination fx:id="paginas"/>
+        <VBox fx:id="boxVacio" styleClass="vacio" visible="false">
+            <Label text="Aún no tienes productos en Me gusta" styleClass="subtitulo"/>
+            <Label text="Toca el corazón de cualquier prenda para guardarla aquí." styleClass="gris"/>
+            <Button text="Ver catálogo" onAction="#volver" styleClass="btn-primario"/>
+        </VBox>
+    </StackPane>
+</VBox>

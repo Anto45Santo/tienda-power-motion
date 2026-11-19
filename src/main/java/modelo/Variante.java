@@ -1,13 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelo;
 
-/**
- *
- * @author Jovan
- */
+/** Nodo de la lista doble de stock (ListaVariantes). En stock.txt: idProducto;talla;color;cantidad */
 public class Variante {
-    
+    private final String talla, color;
+    private int cantidad;
+    public Variante sig, ant;
+
+    public Variante(String talla, String color, int cantidad) {
+        this.talla = talla; this.color = color; this.cantidad = cantidad;
+        sig = ant = null;
+    }
+
+    public String getTalla() { return talla; }
+    public String getColor() { return color; }
+    public int getCantidad() { return cantidad; }
+    public void setCantidad(int cantidad) { this.cantidad = cantidad; }
 }

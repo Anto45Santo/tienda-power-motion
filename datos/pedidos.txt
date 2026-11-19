@@ -1,0 +1,8 @@
+10215;1;11/09/2026 10:20;ENTREGADO;;PM10215_ejemplo.png;Andrés Gómez;300 123 4567;Cra. 15 # 93 - 47, Apto 502, Bogotá;Bogotá;Cundinamarca
+10391;1;02/10/2026 18:45;ENTREGADO;;PM10391_ejemplo.png;Andrés Gómez;300 123 4567;Cra. 15 # 93 - 47, Apto 502, Bogotá;Bogotá;Cundinamarca
+10477;1;22/10/2026 09:12;RECHAZADO;Comprobante ilegible;;Andrés Gómez;300 123 4567;Cra. 15 # 93 - 47, Apto 502, Bogotá;Bogotá;Cundinamarca
+10482;1;24/10/2026 14:30;ENVIADO;;PM10482_ejemplo.png;Andrés Gómez;300 123 4567;Cra. 15 # 93 - 47, Apto 502, Bogotá;Bogotá;Cundinamarca
+10487;7;25/10/2026 11:58;APROBADO;;PM10487_ejemplo.png;Sofía Herrera;317 664 0090;Calle 45 # 12 - 30;Bogotá;Cundinamarca
+10489;5;19/11/2026 11:05;POR_APROBAR;;PM10489_ejemplo.png;Daniela Pérez;320 778 1123;Calle 45 # 12 - 30;Bogotá;Cundinamarca
+10490;4;19/11/2026 15:12;POR_APROBAR;;PM10490_ejemplo.png;Carlos Rodríguez;315 220 8841;Calle 45 # 12 - 30;Bogotá;Cundinamarca
+10491;3;19/11/2026 16:40;POR_APROBAR;;PM10491_ejemplo.png;Laura Martínez;311 555 0192;Calle 45 # 12 - 30;Bogotá;Cundinamarca

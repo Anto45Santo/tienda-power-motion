@@ -1,0 +1,7 @@
+1;Andrés;Gómez;andres.gomez@correo.com;300 123 4567;Cra. 15 # 93 - 47, Apto 502, Bogotá;ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f;CLIENTE;marzo 2025
+2;José;Lozano;admin@powermotion.co;321 435 5407;;240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9;ADMIN;enero 2025
+3;Laura;Martínez;laura.m@correo.com;311 555 0192;;ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f;CLIENTE;junio 2025
+4;Carlos;Rodríguez;carlos.r@correo.com;315 220 8841;;ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f;CLIENTE;agosto 2025
+5;Daniela;Pérez;dani.perez@correo.com;320 778 1123;;ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f;CLIENTE;septiembre 2025
+6;Mateo;Gómez;mateo.g@correo.com;301 908 3321;;ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f;CLIENTE;octubre 2025
+7;Sofía;Herrera;sofia.h@correo.com;317 664 0090;;ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f;CLIENTE;febrero 2026

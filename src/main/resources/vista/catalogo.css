@@ -1,0 +1,11 @@
+/* catalogo.css — Catálogo, Me gusta y panel de filtros */
+.btn-borde-fino { -fx-background-color: white; -fx-border-color: -linea; -fx-text-fill: -texto; -fx-padding: 6 12 6 12; -fx-graphic-text-gap: 8; }
+.btn-borde-fino:hover { -fx-border-color: -azul; }
+.btn-borde-fino.activo { -fx-background-color: -azul-suave; -fx-border-color: -azul; -fx-text-fill: -azul; }
+.filtro-activo { -fx-padding: 6 12 6 12; -fx-font-size: 12px; -fx-content-display: right; -fx-graphic-text-gap: 8; }
+.velo { -fx-background-color: rgba(11,18,32,0.35); }
+.panel-filtros { -fx-background-color: white; -fx-padding: 18 20 18 20; -fx-spacing: 10; }
+.panel-filtros .grupo { -fx-font-size: 13px; -fx-font-weight: 800; -fx-padding: 8 0 2 0; }
+.panel-filtros .chip { -fx-padding: 4 10 4 10; }
+.vacio { -fx-spacing: 12; -fx-alignment: center; }
+.vacio .label { -fx-text-fill: -gris; }

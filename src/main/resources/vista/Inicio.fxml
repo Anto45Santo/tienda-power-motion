@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.shape.Rectangle?>
+
+<!-- 01 · Bienvenida (landing). Primera pantalla de la aplicación. -->
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="vista.frmInicio"
+           styleClass="inicio" prefWidth="1200" prefHeight="688">
+    <stylesheets>
+        <URL value="@estilos.css"/>
+        <URL value="@inicio.css"/>
+    </stylesheets>
+
+    <!-- Foto que rota (lista circular) -->
+    <ImageView fx:id="imgFoto" fitHeight="688" preserveRatio="true" StackPane.alignment="CENTER_RIGHT">
+        <Image url="@../imges/banners/hero_runner.jpg" requestedWidth="1400" requestedHeight="900" preserveRatio="true"/>
+    </ImageView>
+    <Region styleClass="degradado" StackPane.alignment="CENTER_LEFT"/>
+
+    <VBox styleClass="contenido" spacing="14" StackPane.alignment="CENTER_LEFT" maxWidth="560">
+        <ImageView fitWidth="228" preserveRatio="true">
+            <Image url="@../img/logo.png"/>
+        </ImageView>
+        <VBox spacing="0">
+            <VBox.margin><Insets top="40"/></VBox.margin>
+            <Label text="Moviendo el mundo" styleClass="titulo-inicio"/>
+            <Label text="contigo." styleClass="titulo-inicio, titulo-azul"/>
+        </VBox>
+        <Label text="Ropa, calzado y accesorios deportivos originales. Compra, guarda lo que te gusta y sigue tus pedidos."
+               styleClass="descripcion" wrapText="true" maxWidth="440"/>
+        <HBox spacing="12">
+            <VBox.margin><Insets top="18"/></VBox.margin>
+            <Button text="Iniciar sesión" onAction="#irLogin" styleClass="btn-primario, btn-grande" prefWidth="200"/>
+            <Button text="Registrarse" onAction="#irRegistro" styleClass="btn-transparente, btn-grande" prefWidth="180"/>
+        </HBox>
+        <VBox fx:id="beneficios" spacing="10">
+            <VBox.margin><Insets top="36"/></VBox.margin>
+            <Label text="Envío a todo el país" styleClass="beneficio"><graphic><Group><SVGPath styleClass="ico,ico-celeste" scaleX="0.75" scaleY="0.75" content="M3 6h11v10H3z M14 10h4l3 3v3h-7 M5.3 18a1.7 1.7 0 1 0 3.4 0a1.7 1.7 0 1 0 -3.4 0 M15.3 18a1.7 1.7 0 1 0 3.4 0a1.7 1.7 0 1 0 -3.4 0"/></Group></graphic></Label>
+            <Label text="Cambios hasta 30 días" styleClass="beneficio"><graphic><Group><SVGPath styleClass="ico,ico-celeste" scaleX="0.75" scaleY="0.75" content="M20 11a8 8 0 1 0-2.3 5.7 M20 5v6h-6"/></Group></graphic></Label>
+            <Label text="100% originales" styleClass="beneficio"><graphic><Group><SVGPath styleClass="ico,ico-celeste" scaleX="0.75" scaleY="0.75" content="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z M9 12l2 2 4-4"/></Group></graphic></Label>
+        </VBox>
+    </VBox>
+</StackPane>

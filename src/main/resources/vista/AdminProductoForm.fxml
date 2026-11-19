@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.*?>
+
+<!-- 15 · Admin – Nuevo / Editar producto -->
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="vista.frmAdminProductoForm"
+      styleClass="zona-admin" spacing="16">
+    <stylesheets>
+        <URL value="@estilos.css"/>
+        <URL value="@admin.css"/>
+    </stylesheets>
+
+    <!-- Datos del producto -->
+    <VBox styleClass="caja" spacing="6" HBox.hgrow="ALWAYS" prefWidth="470">
+        <padding><Insets top="14" right="18" bottom="14" left="18"/></padding>
+        <Label text="Datos del producto" styleClass="subtitulo"/>
+        <GridPane hgap="12" vgap="4">
+            <columnConstraints><ColumnConstraints percentWidth="50"/><ColumnConstraints percentWidth="50"/></columnConstraints>
+            <Label text="Nombre *" styleClass="campo-label" GridPane.columnSpan="2"/>
+            <TextField fx:id="txtNombre" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+            <Label text="Categoría *" styleClass="campo-label" GridPane.rowIndex="2"/>
+            <Label text="Marca *" styleClass="campo-label" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <ComboBox fx:id="cmbCategoria" maxWidth="Infinity" GridPane.rowIndex="3"><items><FXCollections fx:factory="observableArrayList"><String fx:value="Calzado"/><String fx:value="Ropa"/><String fx:value="Accesorios"/></FXCollections></items></ComboBox>
+            <ComboBox fx:id="cmbMarca" editable="true" maxWidth="Infinity" GridPane.rowIndex="3" GridPane.columnIndex="1"><items><FXCollections fx:factory="observableArrayList"><String fx:value="Adidas"/><String fx:value="Nike"/><String fx:value="Puma"/><String fx:value="Reebok"/><String fx:value="Asics"/><String fx:value="Fila"/><String fx:value="Skechers"/><String fx:value="Power Motion"/></FXCollections></items></ComboBox>
+            <Label text="Subcategoría / deporte" styleClass="campo-label" GridPane.rowIndex="4"/>
+            <Label text="Género" styleClass="campo-label" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            <ComboBox fx:id="cmbSub" editable="true" maxWidth="Infinity" GridPane.rowIndex="5"><items><FXCollections fx:factory="observableArrayList"><String fx:value="Running"/><String fx:value="Training"/><String fx:value="Casual"/><String fx:value="Camisetas"/><String fx:value="Chaquetas"/><String fx:value="Pantalonetas"/><String fx:value="Licras"/><String fx:value="Tops"/><String fx:value="Buzos"/><String fx:value="Maletines"/><String fx:value="Termos"/></FXCollections></items></ComboBox>
+            <ComboBox fx:id="cmbGenero" value="Hombre" maxWidth="Infinity" GridPane.rowIndex="5" GridPane.columnIndex="1"><items><FXCollections fx:factory="observableArrayList"><String fx:value="Hombre"/><String fx:value="Mujer"/><String fx:value="Niño"/><String fx:value="Unisex"/></FXCollections></items></ComboBox>
+            <Label text="Precio (COP) *" styleClass="campo-label" GridPane.rowIndex="6"/>
+            <Label text="Precio anterior" styleClass="campo-label" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+            <TextField fx:id="txtPrecio" promptText="Ej. 389900" GridPane.rowIndex="7"/>
+            <TextField fx:id="txtAnterior" promptText="Opcional" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+        </GridPane>
+        <Label text="Colores *" styleClass="campo-label"/>
+        <FlowPane fx:id="boxColores" hgap="6" vgap="6">
+            <HBox fx:id="boxNuevoColor" spacing="6">
+                <TextField fx:id="txtColor" promptText="Nuevo color…" prefWidth="140" onAction="#agregarColor"/>
+                <Button fx:id="btnColor" onAction="#agregarColor" styleClass="btn-primario" prefWidth="36" prefHeight="36" style="-fx-padding: 0;">
+                    <graphic><Group><SVGPath styleClass="ico,ico-blanco" scaleX="0.75" scaleY="0.75" content="M12 5v14M5 12h14"/></Group></graphic>
+                </Button>
+            </HBox>
+        </FlowPane>
+        <Label text="Descripción" styleClass="campo-label"/>
+        <TextArea fx:id="txtDescripcion" prefRowCount="2" wrapText="true" minHeight="56" prefHeight="56"/>
+        <Label text="Imágenes (máx. 8) · la primera es la portada" styleClass="campo-label"/>
+        <HBox fx:id="boxImagenes" spacing="8"/>
+    </VBox>
+
+    <!-- Tallas y stock -->
+    <VBox styleClass="caja" spacing="8" HBox.hgrow="ALWAYS" prefWidth="470">
+        <padding><Insets top="14" right="18" bottom="14" left="18"/></padding>
+        <HBox alignment="CENTER_LEFT">
+            <Label text="Tipo de tallaje *" styleClass="subtitulo"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <StackPane fx:id="iconoCandado" visible="false"><Group><SVGPath styleClass="ico,ico-medio" scaleX="0.75" scaleY="0.75" content="M7 11H17a2 2 0 0 1 2 2V19a2 2 0 0 1 -2 2H7a2 2 0 0 1 -2 -2V13a2 2 0 0 1 2 -2z M8 11V8a4 4 0 0 1 8 0v3"/></Group></StackPane>
+        </HBox>
+        <HBox fx:id="segmento" styleClass="segmento">
+            <ToggleButton fx:id="tipoCalzado" text="Calzado&#10;US 7 – 12" maxWidth="Infinity" HBox.hgrow="ALWAYS" selected="true">
+                <graphic><Group><SVGPath styleClass="ico,ico-azul" scaleX="0.833" scaleY="0.833" content="M3 17 17 3l4 4L7 21z M7 13l2 2M10 10l2 2M13 7l2 2"/></Group></graphic>
+            </ToggleButton>
+            <ToggleButton fx:id="tipoTextil" text="Textil&#10;XS – 3XL" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+                <graphic><Group><SVGPath styleClass="ico,ico-azul" scaleX="0.833" scaleY="0.833" content="M3 12V4h8l10 10-8 8z M6.2 8.5a1.3 1.3 0 1 0 2.6 0a1.3 1.3 0 1 0 -2.6 0"/></Group></graphic>
+            </ToggleButton>
+            <ToggleButton fx:id="tipoUnica" text="Talla única&#10;Accesorios" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+                <graphic><Group><SVGPath styleClass="ico,ico-azul" scaleX="0.833" scaleY="0.833" content="M3 7l9-4 9 4v10l-9 4-9-4z M3 7l9 4 9-4M12 11v10"/></Group></graphic>
+            </ToggleButton>
+        </HBox>
+        <Label fx:id="lblNotaTallaje" styleClass="gris" wrapText="true"/>
+        <VBox fx:id="boxTallas" spacing="6">
+            <Label text="Tallas disponibles" styleClass="campo-label"/>
+            <FlowPane fx:id="flowTallas" hgap="5" vgap="5"/>
+        </VBox>
+        <Label fx:id="lblMatriz" styleClass="campo-label"/>
+        <GridPane fx:id="matriz" styleClass="matriz"/>
+        <Region VBox.vgrow="ALWAYS"/>
+        <HBox fx:id="notaEdicion" styleClass="nota-edicion" managed="false" visible="false">
+            <Group><SVGPath styleClass="ico,ico-azul" scaleX="0.75" scaleY="0.75" content="M4 20h4L19 9l-4-4L4 16z"/></Group>
+            <Label text="Puedes cambiar cualquier cantidad, talla, color, precio o foto. Si llegó mercancía, escribe la nueva cantidad y guarda." wrapText="true"/>
+        </HBox>
+        <Label fx:id="lblError" styleClass="error" wrapText="true"/>
+        <HBox spacing="12">
+            <Button fx:id="btnGuardar" text="Guardar producto" onAction="#guardar" styleClass="btn-primario" HBox.hgrow="ALWAYS" maxWidth="Infinity" prefHeight="42">
+                <graphic><Group><SVGPath styleClass="ico,ico-blanco" scaleX="0.75" scaleY="0.75" content="m5 12 5 5 9-10"/></Group></graphic>
+            </Button>
+            <Button text="Cancelar" onAction="#cancelar" styleClass="btn-borde" HBox.hgrow="ALWAYS" maxWidth="Infinity" prefHeight="42"/>
+        </HBox>
+    </VBox>
+</HBox>

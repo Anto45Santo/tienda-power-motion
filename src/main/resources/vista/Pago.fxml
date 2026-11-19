@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.*?>
+
+<!-- 09 · Finalizar compra (pago por transferencia + comprobante) -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="vista.frmPago" styleClass="pantalla">
+    <stylesheets>
+        <URL value="@estilos.css"/>
+        <URL value="@cuenta.css"/>
+    </stylesheets>
+    <Hyperlink fx:id="lnkVolver" text="Volver al carrito" onAction="#volver">
+        <graphic><Group><SVGPath styleClass="ico,ico-azul" scaleX="0.667" scaleY="0.667" content="m15 6-6 6 6 6"/></Group></graphic>
+    </Hyperlink>
+    <Label text="Finalizar compra" styleClass="titulo"/>
+
+    <HBox spacing="20" VBox.vgrow="ALWAYS">
+        <VBox styleClass="caja" prefWidth="420" minWidth="420">
+            <HBox styleClass="pago-cabecera" alignment="CENTER_LEFT">
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="PAGO POR TRANSFERENCIA" styleClass="titulo-pago"/>
+                    <Label text="Número receptor" styleClass="pequeno"/>
+                    <Label fx:id="lblNumero" text="321 435 5407" styleClass="numero"/>
+                    <Label text="A nombre de Power Motion S.A.S." styleClass="pequeno"/>
+                    <Button fx:id="btnCopiar" text="Copiar número" onAction="#copiar" styleClass="btn-transparente, btn-chico">
+                        <graphic><Group><SVGPath styleClass="ico,ico-blanco" scaleX="0.583" scaleY="0.583" content="M10 8H18a2 2 0 0 1 2 2V18a2 2 0 0 1 -2 2H10a2 2 0 0 1 -2 -2V10a2 2 0 0 1 2 -2z M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></Group></graphic>
+                        <VBox.margin><Insets top="6"/></VBox.margin>
+                    </Button>
+                </VBox>
+                <ImageView fitWidth="120" fitHeight="120" preserveRatio="true"><Image url="@../img/qr_pago.png"/></ImageView>
+            </HBox>
+            <VBox spacing="10" VBox.vgrow="ALWAYS">
+                <padding><Insets top="14" right="20" bottom="16" left="20"/></padding>
+                <Label text="Nequi · Daviplata · Bancolombia · PSE" styleClass="gris-claro"/>
+                <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+                    <VBox fx:id="listaItems" spacing="8"/>
+                </ScrollPane>
+                <Region styleClass="separador"/>
+                <HBox alignment="CENTER_LEFT">
+                    <Label text="Total a transferir" styleClass="negrita"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="lblTotal" styleClass="total-azul"/>
+                </HBox>
+            </VBox>
+        </VBox>
+
+        <VBox styleClass="caja, caja-pad" spacing="8" HBox.hgrow="ALWAYS">
+            <Label text="Datos de envío" styleClass="subtitulo"/>
+            <GridPane hgap="16" vgap="6">
+                <columnConstraints><ColumnConstraints percentWidth="50"/><ColumnConstraints percentWidth="50"/></columnConstraints>
+                <Label text="Nombre completo *" styleClass="campo-label"/>
+                <Label text="Teléfono *" styleClass="campo-label" GridPane.columnIndex="1"/>
+                <TextField fx:id="txtNombre" GridPane.rowIndex="1"/>
+                <TextField fx:id="txtTelefono" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Label text="Dirección de entrega *" styleClass="campo-label" GridPane.rowIndex="2"/>
+                <TextField fx:id="txtDireccion" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
+                <Label text="Ciudad *" styleClass="campo-label" GridPane.rowIndex="4"/>
+                <Label text="Departamento *" styleClass="campo-label" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                <TextField fx:id="txtCiudad" GridPane.rowIndex="5"/>
+                <ComboBox fx:id="cmbDepartamento" maxWidth="Infinity" GridPane.rowIndex="5" GridPane.columnIndex="1">
+                    <items><FXCollections fx:factory="observableArrayList"><String fx:value="Amazonas"/><String fx:value="Antioquia"/><String fx:value="Arauca"/><String fx:value="Atlántico"/><String fx:value="Bogotá D.C."/><String fx:value="Bolívar"/><String fx:value="Boyacá"/><String fx:value="Caldas"/><String fx:value="Caquetá"/><String fx:value="Casanare"/><String fx:value="Cauca"/><String fx:value="Cesar"/><String fx:value="Chocó"/><String fx:value="Córdoba"/><String fx:value="Cundinamarca"/><String fx:value="Guainía"/><String fx:value="Guaviare"/><String fx:value="Huila"/><String fx:value="La Guajira"/><String fx:value="Magdalena"/><String fx:value="Meta"/><String fx:value="Nariño"/><String fx:value="Norte de Santander"/><String fx:value="Putumayo"/><String fx:value="Quindío"/><String fx:value="Risaralda"/><String fx:value="San Andrés"/><String fx:value="Santander"/><String fx:value="Sucre"/><String fx:value="Tolima"/><String fx:value="Valle del Cauca"/><String fx:value="Vaupés"/><String fx:value="Vichada"/></FXCollections></items>
+                </ComboBox>
+            </GridPane>
+            <Label text="Comprobante de pago *" styleClass="campo-label">
+                <VBox.margin><Insets top="10"/></VBox.margin>
+            </Label>
+            <HBox fx:id="zonaArchivo" styleClass="zona-archivo">
+                <Group><SVGPath styleClass="ico,ico-azul" scaleX="1.0" scaleY="1.0" content="M12 16V4M7 9l5-5 5 5M4 20h16"/></Group>
+                <VBox spacing="2" HBox.hgrow="ALWAYS">
+                    <Label fx:id="lblArchivo" text="Selecciona la imagen del comprobante" styleClass="negrita"/>
+                    <Label text="JPG o PNG · máximo 5 MB" styleClass="gris-claro"/>
+                </VBox>
+                <Button text="Examinar…" onAction="#examinar" styleClass="btn-borde"/>
+            </HBox>
+            <Label fx:id="lblError" styleClass="error" managed="false" visible="false"/>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Button fx:id="btnEnviar" text="Enviar pedido" onAction="#enviar" styleClass="btn-primario, btn-grande" maxWidth="Infinity">
+                <graphic><Group><SVGPath styleClass="ico,ico-blanco" scaleX="0.75" scaleY="0.75" content="M21 3 10 14M21 3l-7 18-4-7-7-4z"/></Group></graphic>
+            </Button>
+            <Label text="Verás el estado del pago en Mis compras cuando el administrador lo revise." styleClass="gris-claro"/>
+        </VBox>
+    </HBox>
+</VBox>

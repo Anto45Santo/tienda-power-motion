@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- 03 · Crear cuenta -->
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="vista.frmRegistro"
+      prefWidth="1200" prefHeight="688">
+    <stylesheets>
+        <URL value="@estilos.css"/>
+        <URL value="@login.css"/>
+    </stylesheets>
+
+    <fx:include source="PanelMarca.fxml"/>
+
+    <StackPane styleClass="formulario" HBox.hgrow="ALWAYS">
+        <VBox spacing="6" maxWidth="560" alignment="CENTER_LEFT">
+            <Label text="Crear cuenta" styleClass="titulo-grande"/>
+            <Label text="Completa tus datos para empezar a comprar." styleClass="gris"/>
+
+            <GridPane hgap="16" vgap="6">
+                <VBox.margin><Insets top="16"/></VBox.margin>
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="50"/>
+                    <ColumnConstraints percentWidth="50"/>
+                </columnConstraints>
+                <Label text="Nombre *" styleClass="campo-label" GridPane.rowIndex="0"/>
+                <Label text="Apellido *" styleClass="campo-label" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <TextField fx:id="txtNombre" GridPane.rowIndex="1"/>
+                <TextField fx:id="txtApellido" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Label text="Correo electrónico *" styleClass="campo-label" GridPane.rowIndex="2"/>
+                <Label text="Teléfono" styleClass="campo-label" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <TextField fx:id="txtCorreo" GridPane.rowIndex="3"/>
+                <TextField fx:id="txtTelefono" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                <Label text="Contraseña *" styleClass="campo-label" GridPane.rowIndex="4"/>
+                <Label text="Confirmar contraseña *" styleClass="campo-label" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                <PasswordField fx:id="txtClave" promptText="Mínimo 8 caracteres" GridPane.rowIndex="5"/>
+                <PasswordField fx:id="txtClave2" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <CheckBox fx:id="chkTerminos" text="Soy mayor de 18 años y acepto los Términos y condiciones y la Política de privacidad.">
+                <VBox.margin><Insets top="16"/></VBox.margin>
+            </CheckBox>
+            <Label fx:id="lblError" styleClass="error" managed="false" visible="false"/>
+
+            <Button text="Crear cuenta" onAction="#crear" styleClass="btn-primario, btn-grande" maxWidth="Infinity">
+                <VBox.margin><Insets top="16"/></VBox.margin>
+            </Button>
+            <HBox alignment="CENTER">
+                <VBox.margin><Insets top="10"/></VBox.margin>
+                <Hyperlink text="¿Ya tienes cuenta? Inicia sesión" onAction="#irLogin"/>
+            </HBox>
+        </VBox>
+    </StackPane>
+</HBox>

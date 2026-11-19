@@ -1,13 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelo;
 
-/**
- *
- * @author Jovan
- */
+/** Nodo de la lista doble de colores (ListaColores). */
 public class NodoColor {
-    
+    public String nombre;
+    public NodoColor sig, ant;
+
+    public NodoColor(String nombre) {
+        this.nombre = nombre;
+        sig = ant = null;
+    }
 }

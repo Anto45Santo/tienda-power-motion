@@ -1,0 +1,18 @@
+1;Tenis Running Ultra Glide 3 Hombre;Adidas;Calzado;Running;Hombre;CALZADO;389900;559900;Tenis livianos para correr, con mediasuela de doble densidad que devuelve energía y capellada en malla técnica transpirable.;false;true;340;run_blue.png,run_blue_b.png,run_black.png,run_red.png;Azul,Negro,Blanco
+2;Camiseta Dry-Fit Performance Azul;Fila;Ropa;Camisetas;Hombre;TEXTIL;89900;129900;Tela dry-fit que absorbe el sudor y seca rápido.;false;true;0;tee_blue.png,tee_black.png;Azul,Negro,Blanco
+3;Chaqueta Fleece Training Azul;Reebok;Ropa;Chaquetas;Hombre;TEXTIL;249900;349900;Chaqueta térmica liviana para entrenar en clima frío.;false;true;0;jacket_blue.png,jacket_black.png;Azul,Negro,Blanco
+4;Pantaloneta Go Run 2 en 1;Skechers;Ropa;Pantalonetas;Hombre;TEXTIL;119900;169900;Pantaloneta con licra interna y bolsillo trasero.;false;true;0;shorts_blue.png,shorts_black.png;Azul,Negro,Blanco
+5;Licra Deportiva Tiro Alto Mujer;Fila;Ropa;Licras;Mujer;TEXTIL;139900;0;Licra de compresión con tiro alto que no se transparenta.;true;true;0;leggings_blue.png,leggings_black.png;Azul,Negro,Blanco
+6;Tenis Training Flex Pro Negro;Nike;Calzado;Training;Hombre;CALZADO;429900;0;Tenis estables para entrenamiento funcional.;true;true;0;run_black.png,run_blue.png;Azul,Negro,Blanco
+7;Buzo con Capucha Dry Training;Puma;Ropa;Buzos;Hombre;TEXTIL;189900;249900;Buzo liviano con capucha para calentar antes de entrenar.;false;true;0;hoodie_teal.png;Azul,Negro,Blanco
+8;Top Deportivo Impacto Alto;Adidas;Ropa;Tops;Mujer;TEXTIL;149900;0;Top con soporte alto para running y saltos.;false;true;0;bra_blue.png;Azul,Negro,Blanco
+9;Tenis Slip-On Flow Mujer;Asics;Calzado;Casual;Mujer;CALZADO;299900;0;Tenis sin cordones, cómodos para el día a día.;true;true;0;slip_blue.png,slip_white.png;Azul,Negro,Blanco
+10;Maletín Deportivo Duffel 40 L;Nike;Accesorios;Maletines;Unisex;UNICA;179900;239900;Maletín con ruedas y bolsillo separado para tenis.;false;true;0;duffel.png;Negro,Gris
+11;Termo Deportivo Tritán 1 L;Power Motion;Accesorios;Termos;Unisex;UNICA;69900;0;Termo libre de BPA con tapa antiderrame.;false;true;0;bottle.png;Azul,Negro
+12;Cuerda para Saltar Speed Pro;Adidas;Accesorios;Training;Unisex;UNICA;49900;69900;Cuerda con rodamientos y mangos de espuma.;false;true;0;rope.png;Negro
+13;Camiseta Básica Training Negra;Puma;Ropa;Camisetas;Hombre;TEXTIL;69900;0;Camiseta de algodón técnico.;false;true;0;tee_black.png;Azul,Negro,Blanco
+14;Camiseta Mujer Dry Azul;Fila;Ropa;Camisetas;Mujer;TEXTIL;79900;99900;Camiseta de corte entallado para correr.;false;true;0;wtee_blue.png;Azul,Negro,Blanco
+15;Chaqueta Mujer Rompevientos;Reebok;Ropa;Chaquetas;Mujer;TEXTIL;229900;0;Rompevientos impermeable y liviano.;false;true;0;wjacket_blue.png;Azul,Negro,Blanco
+16;Esqueleto Running Mujer;Nike;Ropa;Tops;Mujer;TEXTIL;89900;0;Esqueleto fresco con espalda deportiva.;false;true;0;wtank_blue.png;Azul,Negro,Blanco
+17;Esqueleto Basketball Hombre;Adidas;Ropa;Basketball;Hombre;TEXTIL;99900;129900;Esqueleto de malla para baloncesto.;false;true;0;tank_blue.png;Azul,Negro,Blanco
+18;Rodillo de Espuma Recovery;Power Motion;Accesorios;Recuperación;Unisex;UNICA;89900;0;Rodillo para masaje y estiramiento.;false;true;0;roller.png;Azul

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.*?>
+
+<!-- 12 · Mi perfil -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="vista.frmPerfil" styleClass="pantalla">
+    <stylesheets>
+        <URL value="@estilos.css"/>
+        <URL value="@cuenta.css"/>
+    </stylesheets>
+    <Hyperlink fx:id="lnkVolver" text="Volver al catálogo" onAction="#volver">
+        <graphic><Group><SVGPath styleClass="ico,ico-azul" scaleX="0.667" scaleY="0.667" content="m15 6-6 6 6 6"/></Group></graphic>
+    </Hyperlink>
+    <Label text="Mi perfil" styleClass="titulo"/>
+
+    <HBox spacing="20">
+        <!-- Tarjeta del usuario -->
+        <VBox styleClass="caja" prefWidth="300" minWidth="300" maxHeight="-Infinity">
+            <HBox fx:id="cabecera" styleClass="perfil-cabecera">
+                <StackPane>
+                    <Circle radius="28" styleClass="avatar"/>
+                    <Label fx:id="lblIniciales" styleClass="avatar-texto" style="-fx-font-size: 22px;"/>
+                </StackPane>
+                <VBox spacing="2">
+                    <Label fx:id="lblNombre" styleClass="nombre"/>
+                    <Label fx:id="lblCorreo" styleClass="correo"/>
+                </VBox>
+            </HBox>
+            <VBox spacing="14" alignment="CENTER">
+                <padding><Insets top="18" right="20" bottom="18" left="20"/></padding>
+                <Label fx:id="lblDesde" styleClass="gris"/>
+                <HBox spacing="12">
+                    <VBox styleClass="dato" HBox.hgrow="ALWAYS"><Label fx:id="lblCompras" styleClass="valor"/><Label text="Compras" styleClass="gris"/></VBox>
+                    <VBox styleClass="dato" HBox.hgrow="ALWAYS"><Label fx:id="lblMeGusta" styleClass="valor"/><Label text="Me gusta" styleClass="gris"/></VBox>
+                </HBox>
+                <Hyperlink text="Cerrar sesión" onAction="#cerrarSesion" styleClass="link-rojo"/>
+            </VBox>
+        </VBox>
+
+        <VBox spacing="12" HBox.hgrow="ALWAYS">
+            <VBox styleClass="caja, caja-pad" spacing="8">
+                <Label text="Mis datos" styleClass="subtitulo"/>
+                <GridPane hgap="16" vgap="6">
+                    <columnConstraints><ColumnConstraints percentWidth="50"/><ColumnConstraints percentWidth="50"/></columnConstraints>
+                    <Label text="Nombre" styleClass="campo-label"/>
+                    <Label text="Apellido" styleClass="campo-label" GridPane.columnIndex="1"/>
+                    <TextField fx:id="txtNombre" GridPane.rowIndex="1"/>
+                    <TextField fx:id="txtApellido" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    <Label text="Correo electrónico" styleClass="campo-label" GridPane.rowIndex="2"/>
+                    <Label text="Teléfono" styleClass="campo-label" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                    <TextField fx:id="txtCorreo" GridPane.rowIndex="3"/>
+                    <TextField fx:id="txtTelefono" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                    <Label text="Dirección principal" styleClass="campo-label" GridPane.rowIndex="4"/>
+                    <TextField fx:id="txtDireccion" GridPane.rowIndex="5" GridPane.columnSpan="2"/>
+                </GridPane>
+                <HBox alignment="CENTER_RIGHT" spacing="12">
+                    <Label fx:id="lblMensaje" styleClass="error"/>
+                    <Button text="Guardar cambios" onAction="#guardar" styleClass="btn-primario"/>
+                </HBox>
+            </VBox>
+            <HBox styleClass="caja, caja-pad" alignment="CENTER_LEFT" spacing="12">
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="Contraseña" styleClass="subtitulo"/>
+                    <Label text="Te recomendamos cambiarla cada cierto tiempo." styleClass="gris"/>
+                </VBox>
+                <Button fx:id="btnClave" text="Cambiar contraseña" onAction="#cambiarClave" styleClass="btn-borde">
+                    <graphic><Group><SVGPath styleClass="ico,ico-oscuro" scaleX="0.667" scaleY="0.667" content="M7 11H17a2 2 0 0 1 2 2V19a2 2 0 0 1 -2 2H7a2 2 0 0 1 -2 -2V13a2 2 0 0 1 2 -2z M8 11V8a4 4 0 0 1 8 0v3"/></Group></graphic>
+                </Button>
+                <Hyperlink text="Eliminar mi cuenta" onAction="#eliminarCuenta" styleClass="link-rojo"/>
+            </HBox>
+        </VBox>
+    </HBox>
+</VBox>

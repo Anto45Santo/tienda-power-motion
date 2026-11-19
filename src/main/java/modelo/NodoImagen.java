@@ -1,13 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelo;
 
-/**
- *
- * @author Jovan
- */
+/** Nodo de la lista doble circular de imágenes (ListaImagenes). Solo guarda el nombre del archivo. */
 public class NodoImagen {
-    
+    public String archivo;
+    public NodoImagen sig, ant;
+
+    public NodoImagen(String archivo) {
+        this.archivo = archivo;
+        sig = ant = null;
+    }
 }

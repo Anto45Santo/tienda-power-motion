@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.*?>
+
+<!-- 14 · Admin – Productos -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="vista.frmAdminProductos" styleClass="zona-admin">
+    <stylesheets>
+        <URL value="@estilos.css"/>
+        <URL value="@admin.css"/>
+    </stylesheets>
+    <HBox spacing="6" alignment="CENTER_LEFT">
+        <!-- Pestañas: frmAdminProductos filtra según el texto de la pestaña elegida -->
+        <HBox fx:id="boxPestanas" spacing="6">
+            <ToggleButton fx:id="tabTodos" text="Todos" styleClass="chip" selected="true"/>
+            <ToggleButton text="Calzado" styleClass="chip"/>
+            <ToggleButton text="Ropa" styleClass="chip"/>
+            <ToggleButton text="Accesorios" styleClass="chip"/>
+            <ToggleButton text="Bajo stock" styleClass="chip"/>
+            <ToggleButton text="Inactivos" styleClass="chip"/>
+        </HBox>
+        <Region HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="txtBuscar" promptText="Buscar producto…" prefWidth="220"/>
+        <Button fx:id="btnNuevo" text="Nuevo producto" onAction="#nuevo" styleClass="btn-primario">
+            <graphic><Group><SVGPath styleClass="ico,ico-blanco" scaleX="0.667" scaleY="0.667" content="M12 5v14M5 12h14"/></Group></graphic>
+        </Button>
+    </HBox>
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colProducto" text="PRODUCTO" prefWidth="420" minWidth="260" sortable="false" reorderable="false"/>
+            <TableColumn fx:id="colCategoria" text="CATEGORÍA" prefWidth="150" minWidth="150" sortable="false" reorderable="false"/>
+            <TableColumn fx:id="colTallaje" text="TALLAJE" prefWidth="110" minWidth="80" sortable="false" reorderable="false"/>
+            <TableColumn fx:id="colPrecio" text="PRECIO" prefWidth="100" minWidth="95" sortable="false" reorderable="false"/>
+            <TableColumn fx:id="colStock" text="STOCK" prefWidth="150" minWidth="140" sortable="false" reorderable="false"/>
+            <TableColumn fx:id="colAcciones" text="ACCIONES" prefWidth="90" minWidth="90" sortable="false" reorderable="false"/>
+        </columns>
+        <placeholder><Label text="No hay productos."/></placeholder>
+    </TableView>
+    <Label text="Doble clic en un producto para editarlo." styleClass="gris-claro"/>
+</VBox>

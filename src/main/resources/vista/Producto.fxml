@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.Text?>
+
+<!-- 07 · Detalle de producto -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="vista.frmProducto" spacing="8">
+    <stylesheets>
+        <URL value="@estilos.css"/>
+        <URL value="@producto.css"/>
+    </stylesheets>
+    <padding><Insets top="10" right="20" bottom="14" left="20"/></padding>
+
+    <Hyperlink fx:id="lnkVolver" text="Volver al catálogo" onAction="#volver">
+        <graphic><Group><SVGPath styleClass="ico,ico-azul" scaleX="0.667" scaleY="0.667" content="m15 6-6 6 6 6"/></Group></graphic>
+    </Hyperlink>
+
+    <HBox spacing="32">
+        <!-- Galería (lista doble circular) -->
+        <VBox spacing="10" minWidth="420" maxWidth="420">
+            <StackPane fx:id="zonaFoto" styleClass="fondo-foto" prefWidth="420" prefHeight="316" minHeight="316">
+                <ImageView fx:id="imgGrande" fitWidth="380" fitHeight="290" preserveRatio="true"/>
+                <Label fx:id="lblDescuento" styleClass="badge" StackPane.alignment="TOP_LEFT">
+                    <StackPane.margin><Insets top="12" left="12"/></StackPane.margin>
+                </Label>
+                <Button fx:id="btnAnterior" onAction="#fotoAnterior" styleClass="btn-icono" StackPane.alignment="CENTER_LEFT">
+                    <graphic><Group><SVGPath styleClass="ico,ico-oscuro" scaleX="0.75" scaleY="0.75" content="m15 6-6 6 6 6"/></Group></graphic>
+                    <StackPane.margin><Insets left="10"/></StackPane.margin>
+                </Button>
+                <Button fx:id="btnSiguiente" onAction="#fotoSiguiente" styleClass="btn-icono" StackPane.alignment="CENTER_RIGHT">
+                    <graphic><Group><SVGPath styleClass="ico,ico-oscuro" scaleX="0.75" scaleY="0.75" content="m9 6 6 6-6 6"/></Group></graphic>
+                    <StackPane.margin><Insets right="10"/></StackPane.margin>
+                </Button>
+            </StackPane>
+            <HBox fx:id="boxMiniaturas" spacing="8"/>
+        </VBox>
+
+        <!-- Información -->
+        <VBox spacing="6" HBox.hgrow="ALWAYS">
+            <Label fx:id="lblMarca" styleClass="etiqueta"/>
+            <Label fx:id="lblNombre" styleClass="titulo"/>
+            <HBox fx:id="boxCalificacion" spacing="8" alignment="CENTER_LEFT"/>
+            <HBox spacing="12" alignment="BASELINE_LEFT">
+                <VBox.margin><Insets top="10"/></VBox.margin>
+                <Label fx:id="lblPrecio" styleClass="precio-grande"/>
+                <Text fx:id="txtAntes" styleClass="precio-antes" style="-fx-font-size: 15px;"/>
+                <Label fx:id="lblPorcentaje" styleClass="verde"/>
+            </HBox>
+
+            <Label fx:id="lblColor" text="Color" styleClass="campo-label">
+                <VBox.margin><Insets top="12"/></VBox.margin>
+            </Label>
+            <HBox fx:id="boxColores" spacing="8"/>
+
+            <HBox alignment="CENTER_LEFT">
+                <VBox.margin><Insets top="10"/></VBox.margin>
+                <Label fx:id="lblTalla" text="Talla" styleClass="campo-label"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Hyperlink fx:id="lnkGuia" text="Guía de tallas" onAction="#verGuia"/>
+            </HBox>
+            <HBox fx:id="boxTallas" spacing="6"/>
+
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <VBox.margin><Insets top="8"/></VBox.margin>
+                <Label text="Cantidad:" styleClass="campo-label"/>
+                <Spinner fx:id="spnCantidad" prefWidth="110" prefHeight="32"/>
+                <Label fx:id="lblDisponibles" styleClass="gris"/>
+            </HBox>
+
+            <HBox spacing="12">
+                <VBox.margin><Insets top="8"/></VBox.margin>
+                <Button fx:id="btnCarrito" text="Agregar al carrito" onAction="#agregarAlCarrito"
+                        styleClass="btn-primario" HBox.hgrow="ALWAYS" maxWidth="Infinity" prefHeight="42">
+                    <graphic><Group><SVGPath styleClass="ico,ico-blanco" scaleX="0.75" scaleY="0.75" content="M5 8h14l1 12H4L5 8Z M9 9V6a3 3 0 0 1 6 0v3"/></Group></graphic>
+                </Button>
+                <ToggleButton fx:id="btnDeseos" text="Añadir a lista de deseos" onAction="#cambiarDeseo" styleClass="btn-deseo"
+                              HBox.hgrow="ALWAYS" maxWidth="Infinity" prefHeight="42">
+                    <graphic><Group><SVGPath styleClass="ico,ico-azul" scaleX="0.75" scaleY="0.75" content="M12 20s-7.5-4.6-7.5-10.2A4.2 4.2 0 0 1 12 7.3a4.2 4.2 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></Group></graphic>
+                </ToggleButton>
+            </HBox>
+            <Label fx:id="lblMensaje" styleClass="error" managed="false" visible="false"/>
+        </VBox>
+    </HBox>
+
+    <!-- Descripción y opiniones -->
+    <HBox spacing="32" VBox.vgrow="ALWAYS">
+        <VBox styleClass="caja, caja-pad" spacing="8" minWidth="420" maxWidth="420">
+            <Label text="Descripción" styleClass="subtitulo"/>
+            <Label fx:id="lblDescripcion" styleClass="gris" wrapText="true"/>
+        </VBox>
+        <VBox styleClass="caja, caja-pad" spacing="10" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT">
+                <Label text="Opiniones de clientes" styleClass="subtitulo"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Hyperlink fx:id="lnkOpiniones" onAction="#verOpiniones"/>
+            </HBox>
+            <HBox spacing="14" VBox.vgrow="ALWAYS">
+                <VBox spacing="4" minWidth="130">
+                    <Label fx:id="lblPromedio" styleClass="promedio"/>
+                    <HBox fx:id="boxEstrellasResumen"/>
+                    <Label fx:id="lblTotalOpiniones" styleClass="gris-claro"/>
+                    <Button fx:id="btnOpinar" text="Escribir opinión" onAction="#escribirOpinion" styleClass="btn-borde, btn-chico">
+                        <VBox.margin><Insets top="6"/></VBox.margin>
+                    </Button>
+                </VBox>
+                <HBox fx:id="boxResenas" spacing="12" HBox.hgrow="ALWAYS"/>
+            </HBox>
+        </VBox>
+    </HBox>
+</VBox>

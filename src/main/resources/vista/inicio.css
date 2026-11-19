@@ -1,0 +1,10 @@
+/* inicio.css — pantalla de bienvenida */
+.inicio { -fx-background-color: -noche; }
+.inicio .contenido { -fx-padding: 56 0 0 56; }
+.inicio .degradado {
+    -fx-background-color: linear-gradient(to right, -noche 0%, -noche 44%, rgba(11,18,32,0.35) 62%, rgba(11,18,32,0) 80%);
+}
+.titulo-inicio { -fx-text-fill: white; -fx-font-size: 46px; -fx-font-weight: 800; }
+.titulo-azul { -fx-text-fill: -azul; }
+.inicio .descripcion { -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 16px; -fx-line-spacing: 4; }
+.inicio .beneficio { -fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 13px; -fx-graphic-text-gap: 10; }
