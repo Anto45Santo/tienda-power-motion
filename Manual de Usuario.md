@@ -367,3 +367,173 @@ Mensajes que pueden aparecer y qué hacer:
 - **Mensaje "No se pudo copiar el comprobante"**. Causa: El archivo está abierto en otro programa o no hay permisos. Solución: Cierra el archivo en el otro programa y vuelve a intentar.
 
 ---
+
+# Parte III · Manual del administrador
+
+Esta parte es solo para las cuentas de administrador. Explica cómo revisar pagos y pedidos, administrar el catálogo y el stock, cambiar las fotos de la tienda, moderar opiniones, gestionar usuarios y cuidar la información del sistema.
+
+## 9. Ingreso y gestión de pedidos
+
+### 9.1 Ingreso y menú lateral
+
+Inicia sesión con una cuenta de administrador (sección 3.2). Se abre el panel con un **menú lateral oscuro**:
+
+- **Pedidos**: Revisar pagos y avanzar los pedidos. Muestra cuántos hay por aprobar.
+- **Productos**: Ver, crear, editar, activar y desactivar productos.
+- **Imágenes**: Cambiar las fotos de la pantalla de bienvenida.
+- **Reseñas**: Ocultar, mostrar o eliminar opiniones de clientes.
+- **Usuarios**: Ver clientes, restablecer contraseñas y eliminar cuentas.
+- **Cerrar sesión**: Abajo del menú, junto a tu nombre.
+
+### 9.2 Pedidos
+
+**Indicadores** (arriba): **Ventas aprobadas** (suma de pedidos aprobados, enviados y entregados), **Pedidos hoy**,
+**Por aprobar** y **Bajo stock** (productos activos con menos de 10 unidades).
+
+**Pestañas:** **Por aprobar**, **Aprobado**, **Enviado**, **Entregado** y **Rechazado**, cada una con su cantidad. La
+tabla muestra primero los pedidos más antiguos, que son los primeros que hay que atender.
+
+**Columnas:** número de pedido, cliente, fotos de los productos, enlace **Ver** al comprobante, fecha, total, estado y
+acciones.
+
+#### Revisar el comprobante
+
+Pulsa **Ver** en la columna *Comprobante*. Se abre la imagen que subió el cliente y la dirección de envío. Compara el
+valor y la fecha con tu cuenta bancaria.
+
+#### Aprobar un pago
+
+1. En la pestaña **Por aprobar**, pulsa el botón verde **✓** (*Aprobar pago*).
+2. El sistema revisa que haya stock de todos los productos del pedido. Si falta alguno, muestra *No hay stock suficiente
+   de …* y no aprueba.
+3. Si hay stock, descuenta las unidades, suma las ventas del producto y pasa el pedido a **Aprobado**.
+
+#### Rechazar un pago
+
+1. Pulsa el botón rojo **✕** (*Rechazar*).
+2. Escribe el **motivo del rechazo** (por ejemplo "Comprobante ilegible"); el cliente lo verá en Mis compras.
+3. Pulsa **Aceptar** (u **OK**). El pedido pasa a **Rechazado** y no se descuenta stock.
+
+#### Enviar y entregar
+
+1. Pulsa el botón azul del ojo (*Ver pedido*) en un pedido **Aprobado**.
+2. Revisa los productos y pulsa **Marcar como enviado**.
+3. Cuando el cliente reciba el pedido, ábrelo de nuevo desde la pestaña **Enviado** y pulsa **Marcar como entregado**.
+
+## 10. Productos y stock
+
+### 10.1 Lista de productos
+
+- **Pestañas:** **Todos**, **Calzado**, **Ropa**, **Accesorios**, **Bajo stock** (menos de 10 unidades) e
+  **Inactivos**.
+- **Buscar producto…:** filtra la tabla mientras escribes.
+- **Columna Stock:** total de unidades y estado (**En stock**, **Bajo stock**, **Agotado** o **Inactivo**).
+- **Acciones:** lápiz = **Editar**; el segundo botón **activa** o **desactiva** el producto.
+- **Doble clic** en una fila también abre el producto para editarlo.
+
+> Los productos **no se borran**, se **desactivan**: así los pedidos anteriores siguen mostrando lo que se vendió. Un
+> producto inactivo deja de verse en la tienda y se puede volver a activar cuando quieras.
+
+### 10.2 Crear un producto nuevo
+
+Pulsa **+ Nuevo producto**.
+
+**Columna izquierda · Datos del producto**
+
+1. **Nombre\*** del producto.
+2. **Categoría\*** (Calzado, Ropa o Accesorios) y **Marca\*** (elige de la lista o escribe una nueva).
+3. **Subcategoría / deporte** (Running, Camisetas, Termos…) y **Género** (Hombre, Mujer, Niño o Unisex).
+4. **Precio (COP)\*** y, si está en oferta, **Precio anterior** (el precio sin descuento; el porcentaje se calcula solo).
+5. **Colores\*:** escribe un color en *Nuevo color…* y pulsa **+**. Repite para cada color. Para quitar uno, pulsa su
+   **✕**.
+6. **Descripción** del producto.
+7. **Imágenes\*** (máximo 8): pulsa el cuadro **+** y elige una foto. La primera es la **portada**; haz clic en otra
+   miniatura para volverla portada, o en su **✕** para quitarla.
+
+**Columna derecha · Tallas y stock**
+
+1. Elige el **Tipo de tallaje\***:
+   - **Calzado** (US 7 – 12): tenis, guayos y sandalias.
+   - **Textil** (XS – 3XL): camisetas, pantalones, pantalonetas, chaquetas, licras y medias.
+   - **Talla única** (accesorios): maletines, termos, balones, cuerdas y demás.
+2. En **Tallas disponibles** marca las tallas que manejará el producto.
+3. En **Stock por talla y color** aparece una tabla con una fila por color y una columna por talla. Escribe cuántas
+   unidades hay de cada combinación. Las casillas en 0 se resaltan.
+4. Pulsa **Guardar producto**. Para salir sin guardar pulsa **Cancelar**.
+
+### 10.3 Editar un producto o agregar unidades
+
+Abre el producto con el lápiz o con doble clic. El formulario muestra sus datos actuales y una nota azul que recuerda
+que puedes cambiar cualquier cantidad, talla, color, precio o foto.
+
+- Cambia lo que necesites: nombre, precio, descripción, colores, imágenes o tallas.
+- **Cuando llega más mercancía**, escribe en la tabla de stock la **cantidad total** que hay ahora en cada talla y
+  color, y pulsa **Guardar cambios**.
+- Si el producto **ya tiene ventas**, el tipo de tallaje queda bloqueado (aparece un candado) para no dañar los
+  pedidos anteriores; todo lo demás se puede cambiar.
+
+Mensajes que pueden aparecer y qué hacer:
+
+- «Completa nombre, categoría y marca.» Llena esos campos.
+- «Escribe un precio válido.» Escribe solo números, mayor que 0.
+- «Agrega al menos una imagen.» Sube una foto con el cuadro +.
+- «Agrega al menos un color.» Escribe un color y pulsa +.
+- «Ese color ya está agregado.» No repitas colores.
+- «Marca al menos una talla.» Marca las tallas que maneja el producto.
+- «Escribe el stock de al menos una talla.» Un producto nuevo necesita al menos una unidad.
+
+## 11. Imágenes, reseñas y usuarios
+
+### 11.1 Imágenes de la bienvenida
+
+- **Fotos de la bienvenida:** se muestran en el orden en que rotan en la pantalla de inicio.
+  - **+ Agregar foto:** elige una imagen (recomendado 1920 × 800 px); queda al final de la rotación.
+  - **Cambiar:** reemplaza esa foto por otra y conserva su posición.
+  - **Eliminar:** la quita de la rotación. Siempre debe quedar al menos una foto.
+- **Guías de tallas:** tablas de solo lectura con las equivalencias que ve el cliente en **Guía de tallas**.
+
+### 11.2 Reseñas
+
+- **Pestañas:** **Todas**, **Visibles** y **Ocultas**.
+- Cada fila muestra el producto, el autor, las estrellas, la fecha y el comentario.
+- **Ocultar / Mostrar:** una reseña oculta no la ven los clientes y no cuenta en el promedio de estrellas.
+- **Papelera:** elimina la reseña definitivamente, después de confirmar.
+
+### 11.3 Usuarios
+
+- **Indicadores:** total de **Usuarios**, **Con compras**, **Me gusta** (de todos los clientes) y
+  **Administradores**.
+- **Buscar por nombre o correo…:** filtra la tabla mientras escribes.
+- **Ojo (Ver ficha):** muestra nombre, correo, teléfono, dirección y número de compras.
+  - **Restablecer contraseña:** cambia la contraseña del usuario a `12345678`. Avísale que la cambie desde
+    **Mi perfil**.
+- **Papelera:** elimina la cuenta, después de confirmar. Solo se pueden eliminar **clientes sin compras**; para los
+  demás el botón aparece gris.
+
+## 12. Dónde se guarda la información
+
+El sistema guarda todo automáticamente en archivos de texto; no hay un botón de "guardar todo". Cada acción (registrar,
+comprar, aprobar, editar…) actualiza su archivo al instante.
+
+- **datos/**: `usuarios.txt`, `productos.txt`, `stock.txt`, `resenas.txt`, `pedidos.txt`, `detalle_pedidos.txt`, `megusta.txt`, `carrito.txt` y `fotos.txt`
+- **comprobantes/**: Imágenes de los comprobantes de pago que suben los clientes
+- **imagenes/productos/**: Fotos de productos que sube el administrador
+- **imagenes/banners/**: Fotos de la bienvenida que sube el administrador
+
+- Las **contraseñas** se guardan cifradas (SHA-256): ni el administrador puede leerlas en los archivos.
+- **Copia de seguridad:** con el programa cerrado, copia las carpetas `datos/`, `comprobantes/` e `imagenes/` a otro
+  lugar. Para restaurar, vuelve a ponerlas en la carpeta del proyecto.
+- **Empezar de cero:** con el programa cerrado, borra `datos/` y `comprobantes/`. Al abrirlo de nuevo se crean otra
+  vez los datos de ejemplo.
+- **No edites los `.txt` a mano mientras el programa está abierto**: los cambios se perderían al siguiente guardado.
+
+## 13. Solución de problemas del administrador
+
+Incluye también los problemas técnicos al instalar o ejecutar el programa.
+
+- **La primera ejecución tarda o falla al descargar**. Causa: Maven necesita internet para bajar JavaFX. Solución: Conéctate a internet y vuelve a pulsar **Run**.
+- **Error "pattern matching… -source 11" al compilar**. Causa: El `pom.xml` usa una versión de Java antigua. Solución: Usa el `pom.xml` del proyecto (Java 21) y **Clean and Build**.
+- **El administrador no puede aprobar un pedido**. Causa: Falta stock de algún producto del pedido. Solución: Agrega unidades al producto (sección 10.3) o rechaza el pedido explicando el motivo.
+- **Un producto no aparece en la tienda**. Causa: Está **inactivo** o **agotado**. Solución: En Productos › Inactivos, actívalo; o agrega stock.
+- **Mensaje "No se pudieron leer los archivos" al abrir**. Causa: Un `.txt` se dañó o se editó a mano. Solución: Restaura la copia de seguridad de `datos/`, o bórrala para empezar con los datos de ejemplo.
+- **Mensaje "No se pudo copiar la imagen / el comprobante"**. Causa: El archivo está abierto en otro programa o no hay permisos. Solución: Cierra el archivo en el otro programa y vuelve a intentar.
